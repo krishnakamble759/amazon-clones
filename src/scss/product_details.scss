@@ -296,68 +296,6 @@ body {
     }
 
     // Sidebar section
-    .amazon-sidebar {
-        background-color: $amazon-white;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 350px;
-        z-index: 1000;
-        overflow-y: auto;
-
-        .sidebar-header {
-            background-color: $amazon-navy;
-            color: $amazon-white;
-            padding: 15px 30px;
-
-            h5 {
-                margin: 0;
-            }
-        }
-
-        .sidebar-content {
-            padding: 20px 0;
-
-            .sidebar-section {
-                border-bottom: 1px solid $light-gray;
-                padding: 15px 30px;
-
-                &:last-child {
-                    border-bottom: none;
-                }
-
-                .section-title {
-                    font-size: 18px;
-                    font-weight: bold;
-                    margin-bottom: 15px;
-                }
-
-                ul {
-                    list-style: none;
-                    padding: 0;
-
-                    li {
-                        margin-bottom: 15px;
-
-                        a {
-                            text-decoration: none;
-                            color: $amazon-dark;
-                            font-size: 14px;
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            gap: 10px;
-
-                            &:hover {
-                                background-color: $amazon-white;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 
     // Main Content
     main.product-details-container {
