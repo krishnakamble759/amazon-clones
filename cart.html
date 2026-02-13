@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Clone | Shopping Cart</title>
+</head>
+
+<body>
+    <div id="google_translate_element" class="google-translate-container"></div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Menu -->
+    <div class="amazon-sidebar shadow" id="amazonSidebar">
+        <a href="signin.html" class="sidebar-header d-flex align-items-center text-white text-decoration-none w-100">
+            <i class="bi bi-person-circle fs-4 me-2"></i>
+            <h5 class="mb-0 fs-6 fw-bold">Hello, sign in</h5>
+            <button class="btn-close btn-close-white ms-auto" id="closeSidebar"
+                onclick="event.preventDefault();"></button>
+        </a>
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h6 class="section-title">Digital Content & Devices</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">Prime Video <i class="bi bi-chevron-right ms-auto"></i></a></li>
+                    <li><a href="#">Amazon Music <i class="bi bi-chevron-right ms-auto"></i></a></li>
+                    <li><a href="#">Kindle E-readers & Books <i class="bi bi-chevron-right ms-auto"></i></a></li>
+                    <li><a href="#">Amazon Appstore <i class="bi bi-chevron-right ms-auto"></i></a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h6 class="section-title">Shop by Department</h6>
+                <ul class="list-unstyled">
+                    <li><a href="products.html?category=electronics">Electronics <i
+                                class="bi bi-chevron-right ms-auto"></i></a></li>
+                    <li><a href="products.html?category=computers">Computers <i
+                                class="bi bi-chevron-right ms-auto"></i></a></li>
+                    <li><a href="products.html?category=smart_home">Smart Home <i
+                                class="bi bi-chevron-right ms-auto"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav class="amazon-navbar">
+            <div class="nav-left d-flex align-items-center">
+                <div class="nav-logo">
+                    <a href="/">
+                        <img src="/logo.png" alt="Amazon Logo">
+                        <span class="logo-domain">.in</span>
+                    </a>
+                </div>
+
+                <div class="nav-address d-flex align-items-center ms-2 text-white">
+                    <div class="address-icon me-1">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div class="address-text">
+                        <span class="line-1">Hello</span><br>
+                        <span class="line-2">Select your address</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-fill">
+                <div class="nav-search">
+                    <div class="nav-search-scope border-end dropdown">
+                        <div role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span>All</span>
+                            <i class="bi bi-caret-down-fill ms-1"></i>
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">All Categories</a></li>
+                            <li><a class="dropdown-item" href="#">Alexa Skills</a></li>
+                            <li><a class="dropdown-item" href="#">Amazon Devices</a></li>
+                            <li><a class="dropdown-item" href="#">Electronics</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" placeholder="Search Amazon.in">
+                    <button class="nav-search-submit" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="nav-right d-flex align-items-center">
+                <div class="nav-lang dropdown mx-2 p-1">
+                    <div class="d-flex align-items-center" role="button" id="languageDropdown" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="/india.png" alt="India Flag" class="flag-icon me-1" id="currentFlag">
+                        <span class="lang-text fw-bold" id="currentLang">EN</span>
+                        <i class="bi bi-caret-down-fill ms-1"></i>
+                    </div>
+                </div>
+
+                <div class="nav-account dropdown mx-2 p-1">
+                    <div role="button" id="navAccountDropdown" data-bs-toggle="dropdown" data-bs-display="static"
+                        aria-expanded="false">
+                        <span class="line-1">Hello, sign in</span><br>
+                        <span class="line-2 fw-bold">Account & Lists</span>
+                        <i class="bi bi-caret-down-fill"></i>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-end account-dropdown-menu shadow"
+                        aria-labelledby="navAccountDropdown">
+                        <div class="text-center mb-3 pb-3 border-bottom sign-in-prompt" id="signInPrompt">
+                            <a href="signin.html" class="btn btn-warning sign-in-btn mb-2 fw-bold">Sign in</a>
+                            <div class="small">New customer? <a href="register.html" class="text-primary">Start
+                                    here.</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-orders mx-2 p-1">
+                    <a href="signin.html" class="text-decoration-none text-white">
+                        <span class="line-1 text-nowrap">Returns</span><br>
+                        <span class="line-2 fw-bold">& Orders</span>
+                    </a>
+                </div>
+
+                <a href="cart.html"
+                    class="nav-cart d-flex align-items-end mx-2 p-1 position-relative text-decoration-none text-white">
+                    <div class="cart-icon-container">
+                        <span class="cart-count">0</span>
+                        <img src="/cart.png" alt="Cart">
+                    </div>
+                    <span class="ms-1 fw-bold cart-text">Cart</span>
+                </a>
+            </div>
+        </nav>
+
+        <div class="amazon-subnav d-flex align-items-center">
+            <div class="subnav-left d-flex align-items-center">
+                <div class="subnav-all p-2 d-flex align-items-center">
+                    <i class="bi bi-list"></i>
+                    <span class="ms-1 fw-bold">All</span>
+                </div>
+                <ul class="subnav-links d-flex align-items-center mb-0 list-unstyled">
+                    <li class="p-2">Best Sellers</li>
+                    <li class="p-2">Mobiles</li>
+                    <li class="p-2">Amazon Fresh</li>
+                    <li class="p-2">Today's Deals</li>
+                    <li class="p-2">Customer Service</li>
+                    <li class="p-2">Electronics</li>
+                    <li class="p-2">Prime <i class="bi bi-caret-down-fill text-secondary"></i></li>
+                    <li class="p-2">Fashion</li>
+                    <li class="p-2">Home & Kitchen</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        <div class="row g-4">
+            <!-- Cart Column -->
+            <div class="col-lg-9">
+                <div class="card p-4 border-0 shadow-sm bg-white">
+                    <div class="d-flex justify-content-between align-items-end border-bottom pb-2 mb-3">
+                        <h2 class="fw-normal mb-0 fs-3">Shopping Cart</h2>
+                        <p class="mb-0 small text-muted">Price</p>
+                    </div>
+
+                    <div id="cart-items" class="py-3">
+                        <div class="text-center py-5 empty-cart" id="empty-cart">
+                            <img src="/empty_cart.png" alt="Empty Cart" class="mb-3">
+                            <h3 class="fs-4">Your Amazon Cart is empty.</h3>
+                            <p>Check your Saved for later items below or <a href="products.html"
+                                    class="text-decoration-none text-primary">continue shopping</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-top pt-3 text-end">
+                        <h5 class="fw-normal fs-5">Subtotal (<span class="total-qty">0</span> items): <span
+                                class="fw-bold fs-4 text-dark">₹<span class="total-price">0</span></span></h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="card p-3 border-0 shadow-sm bg-white" id="checkout-card">
+                    <div class="mb-3">
+                        <div class="d-flex align-items-start mb-2">
+                            <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                            <span class="small text-dark">Your order is eligible for FREE Delivery. Select this option
+                                at checkout. Details</span>
+                        </div>
+                        <h5 class="fw-normal fs-5 mt-2">Subtotal (<span class="total-qty">0</span> items): <span
+                                class="fw-bold">₹<span class="total-price">0</span></span></h5>
+                        <div class="form-check small my-3">
+                            <input class="form-check-input" type="checkbox" id="giftCheck">
+                            <label class="form-check-label text-dark" for="giftCheck">
+                                This order contains a gift
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-warning w-100 rounded-pill py-2 shadow-sm fw-bold">Proceed to Buy</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./src/js/cart.js" type="module"></script>
+</body>
+
+</html>

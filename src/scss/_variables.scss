@@ -1,0 +1,125 @@
+// 1. Import Bootstrap functions
+@import "bootstrap/scss/functions";
+
+// 2. Define custom theme variables first
+$amazon-dark: #131921;
+$amazon-navy: #232f3e;
+$amazon-orange: #febd69;
+$amazon-blue: #0066c0;
+$amazon-white: #fff;
+$amazon-yellow: #f0c14b;
+$light-yellow: #f7dfa5;
+$amazon-gray: #adb1b8;
+$light-gray: #d5d9d9;
+$gray: #555;
+$amazon-green: #007600;
+$light-red: #b12704;
+$dark-yellow: #a88734;
+$dark-orange: #c45500;
+$amazon-light-orange: #ff9900;
+$amazon-background: #eaeded;
+$light-navy: #3a4553;
+
+// 3. Bootstrap Overrides (using variables defined above)
+$primary: $amazon-navy;
+$warning: $amazon-orange;
+
+// 4. Standard Bootstrap Variables
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// 5. Custom UI Variables
+$navbar-height: 60px;
+$footer-bg: $amazon-navy;
+
+// 6. Breakpoints
+$too-small-mobile: 320px;
+$mid-small-mobile: 340px;
+$small-mobile: 375px;
+$mid-mobile: 500px;
+$mobile: 576px;
+$small-tab: 768px;
+$big-tab: 992px;
+$small-desktop: 1024px;
+$desktop: 1200px;
+$mid-desktop: 1440px;
+$large-desktop: 1500px;
+
+// 7. Responsive Mixins
+@mixin too-small-mobile {
+    @media (max-width: $too-small-mobile) {
+        @content;
+    }
+}
+
+@mixin mid-small-mobile {
+    @media (max-width: $mid-small-mobile) {
+        @content;
+    }
+}
+
+@mixin small-mobile {
+    @media (max-width: $small-mobile) {
+        @content;
+    }
+}
+
+@mixin mid-mobile {
+    @media (max-width: $mid-mobile) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin small-tab {
+    @media (max-width: $small-tab) {
+        @content;
+    }
+}
+
+@mixin big-tab {
+    @media (max-width: $big-tab) {
+        @content;
+    }
+}
+
+@mixin small-desktop {
+    @media (max-width: $small-desktop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin mid-desktop {
+    @media (max-width: $mid-desktop) {
+        @content;
+    }
+}
+
+@mixin large-desktop {
+    @media (max-width: $large-desktop) {
+        @content;
+    }
+}
+
+@mixin min-desktop {
+    @media (min-width: 1201px) {
+        @content;
+    }
+}
+
+// 8. Remaining Bootstrap core
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/bootstrap";

@@ -1,0 +1,51 @@
+@import "variables";
+
+// Checkout Page Styles
+header {
+    background-color: $amazon-white;
+
+    .checkout-logo {
+        img {
+            object-fit: contain;
+        }
+    }
+}
+
+main.container {
+    .checkout-step {
+        @include big-tab {
+            padding-left: 0;
+        }
+
+        h5 {
+            color: $dark-orange;
+            font-size: 18px;
+        }
+
+        .checkout-step-border {
+            border-color: $amazon-yellow;
+        }
+    }
+
+    .checkout-items-list {
+        img {
+            background: $amazon-background;
+            padding: 5px;
+        }
+    }
+
+    .card.sticky-top {
+        transition: all 0.3s ease;
+        top: 20px;
+        z-index: 1000;
+
+        .place-order-btn {
+            background-color: $amazon-yellow;
+            border-color: $amazon-yellow;
+        }
+
+        .checkout-agreement {
+            font-size: 11px;
+        }
+    }
+}

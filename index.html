@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Clone | Shop Online</title>
+
+</head>
+
+<body>
+  <div id="google_translate_element" class="google-translate-container"></div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar Menu -->
+  <div class="amazon-sidebar shadow" id="amazonSidebar">
+    <a href="signin.html" class="sidebar-header d-flex align-items-center text-white text-decoration-none w-100">
+      <i class="bi bi-person-circle fs-4 me-2"></i>
+      <h5 class="mb-0 fs-6 fw-bold">Hello, sign in</h5>
+      <button class="btn-close btn-close-white ms-auto" id="closeSidebar" onclick="event.preventDefault();"></button>
+    </a>
+    <div class="sidebar-content">
+      <div class="sidebar-section">
+        <h6 class="section-title">Digital Content & Devices</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Prime Video <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">Amazon Music <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">Kindle E-readers & Books <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">Amazon Appstore <i class="bi bi-chevron-right ms-auto"></i></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h6 class="section-title">Shop by Department</h6>
+        <ul class="list-unstyled">
+          <li><a href="products.html?category=electronics">Electronics <i class="bi bi-chevron-right ms-auto"></i></a>
+          </li>
+          <li><a href="products.html?category=computers">Computers <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="products.html?category=smart_home">Smart Home <i class="bi bi-chevron-right ms-auto"></i></a>
+          </li>
+          <li><a href="products.html?category=arts_crafts">Arts & Crafts <i class="bi bi-chevron-right ms-auto"></i></a>
+          </li>
+
+          <div class="extra-categories d-none">
+            <li><a href="#">Automotive <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Baby <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Beauty and Personal Care <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Women's Fashion <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Men's Fashion <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Girls' Fashion <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Boys' Fashion <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Health and Household <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Home and Kitchen <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Industrial and Scientific <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Luggage <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Movies & Television <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Pet supplies <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Software <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Sports and Outdoors <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Tools & Home Improvement <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Toys and Games <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Video Games <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          </div>
+
+          <li><a href="javascript:void(0)" class="see-all-toggle">See all <i class="bi bi-chevron-down ms-1"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h6 class="section-title">Programs & Features</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Gift Cards <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">Shop By Interest <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">Amazon Live <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">International Shopping <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="javascript:void(0)" class="see-all-toggle">See all <i class="bi bi-chevron-down ms-1"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h6 class="section-title">Help & Settings</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Your Account</a></li>
+          <li><a href="#"><i class="bi bi-globe me-2"></i> English</a></li>
+          <li><a href="#"><img src="/india.png" width="20" alt="India" class="me-2"> India</a></li>
+          <li><a href="#">Customer Service</a></li>
+          <li><a href="signin.html">Sign in</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <header>
+    <nav class="amazon-navbar">
+      <div class="nav-left d-flex align-items-center">
+        <div class="nav-logo">
+          <a href="/">
+            <img src="logo.png" alt="Amazon Logo">
+            <span class="logo-domain">.in</span>
+          </a>
+        </div>
+
+        <div class="nav-address d-flex align-items-center ms-2 text-white">
+          <div class="address-icon me-1">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <div class="address-text">
+            <span class="line-1">Hello</span><br>
+            <span class="line-2">Select your address</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-fill">
+        <div class="nav-search">
+          <div class="nav-search-scope border-end dropdown">
+            <div role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span>All</span>
+              <i class="bi bi-caret-down-fill ms-1"></i>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">All Categories</a></li>
+              <li><a class="dropdown-item" href="#">Alexa Skills</a></li>
+              <li><a class="dropdown-item" href="#">Amazon Devices</a></li>
+              <li><a class="dropdown-item" href="#">Amazon Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Amazon Fresh</a></li>
+              <li><a class="dropdown-item" href="#">Amazon Pharmacy</a></li>
+              <li><a class="dropdown-item" href="#">Appliances</a></li>
+              <li><a class="dropdown-item" href="#">Apps & Games</a></li>
+              <li><a class="dropdown-item" href="#">Baby</a></li>
+              <li><a class="dropdown-item" href="#">Beauty</a></li>
+              <li><a class="dropdown-item" href="#">Books</a></li>
+              <li><a class="dropdown-item" href="#">Electronics</a></li>
+            </ul>
+          </div>
+          <input type="text" placeholder="Search Amazon.in">
+          <button class="nav-search-submit" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-right d-flex align-items-center">
+        <div class="nav-lang dropdown mx-2 p-1">
+          <div class="d-flex align-items-center" role="button" id="languageDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img src="/india.png" alt="India Flag" class="flag-icon me-1" id="currentFlag">
+            <span class="lang-text fw-bold" id="currentLang">EN</span>
+            <i class="bi bi-caret-down-fill ms-1"></i>
+          </div>
+          <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="EN" data-flag="/india.png">
+                <img src="/india.png" width="20" alt="India"> English - EN
+              </a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="HI" data-flag="/india.png">
+                <img src="/india.png" width="20" alt="India"> हिन्दी - HI
+              </a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="ES" data-flag="/us.png">
+                <img src="/us.png" width="20" alt="US"> Español - ES
+              </a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="PT"
+                data-flag="/brazil.png">
+                <img src="/brazil.png" width="20" alt="Brazil"> Português - PT
+              </a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="DE"
+                data-flag="/germany.png">
+                <img src="/germany.png" width="20" alt="Germany"> Deutsch - DE
+              </a></li>
+          </ul>
+        </div>
+        <div class="nav-account dropdown mx-2 p-1">
+          <div role="button" id="navAccountDropdown" data-bs-toggle="dropdown" data-bs-display="static"
+            aria-expanded="false">
+            <span class="line-1">Hello, sign in</span><br>
+            <span class="line-2 fw-bold">Account & Lists</span>
+            <i class="bi bi-caret-down-fill"></i>
+          </div>
+          <div class="dropdown-menu dropdown-menu-end account-dropdown-menu shadow"
+            aria-labelledby="navAccountDropdown">
+            <div class="text-center mb-3 pb-3 border-bottom sign-in-prompt" id="signInPrompt">
+              <a href="signin.html" class="btn btn-warning sign-in-btn mb-2 fw-bold" style="font-size: 13px;">Sign
+                in</a>
+              <div class="small" style="font-size: 11px;">New customer? <a href="register.html"
+                  class="text-primary">Start here.</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 account-column-lists">
+                <h6 class="fw-bold mb-2">Your Lists</h6>
+                <ul class="list-unstyled small d-flex flex-column gap-1">
+                  <li><a href="#">Create a List</a></li>
+                  <li><a href="#">Find a List or Registry</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <h6 class="fw-bold mb-2">Your Account</h6>
+                <ul class="list-unstyled small d-flex flex-column gap-1">
+                  <li><a href="#">Account</a></li>
+                  <li><a href="#">Orders</a></li>
+                  <li><a href="#">Recommendations</a></li>
+                  <li><a href="#">Browsing History</a></li>
+                  <li><a href="#">Watchlist</a></li>
+                  <li><a href="#">Video Purchases & Rentals</a></li>
+                  <li><a href="#">Kindle Unlimited</a></li>
+                  <li><a href="#">Content & Devices</a></li>
+                  <li><a href="#">Subscribe & Save Items</a></li>
+                  <li><a href="#">Memberships & Subscriptions</a></li>
+                  <li><a href="#">Music Library</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-orders mx-2 p-1">
+          <a href="signin.html" class="text-decoration-none text-white">
+            <span class="line-1 text-nowrap">Returns</span><br>
+            <span class="line-2 fw-bold">& Orders</span>
+          </a>
+        </div>
+        <a href="cart.html"
+          class="nav-cart d-flex align-items-end mx-2 p-1 position-relative text-decoration-none text-white">
+          <div class="cart-icon-container">
+            <span class="cart-count">0</span>
+            <img src="/cart.png" alt="Cart">
+          </div>
+          <span class="ms-1 fw-bold cart-text">Cart</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="amazon-subnav d-flex align-items-center">
+      <div class="subnav-left d-flex align-items-center">
+        <div class="subnav-all p-2 d-flex align-items-center">
+          <i class="bi bi-list"></i>
+          <span class="ms-1 fw-bold">All</span>
+        </div>
+        <ul class="subnav-links d-flex align-items-center mb-0 list-unstyled">
+          <li class="p-2">Best Sellers</li>
+          <li class="p-2">Mobiles</li>
+          <li class="p-2"><a href="products.html?category=fresh" class="text-white text-decoration-none">Amazon
+              Fresh</a></li>
+          <li class="p-2">Today's Deals</li>
+          <li class="p-2">Customer Service</li>
+          <li class="p-2">Electronics</li>
+          <li class="p-2">Prime <i class="bi bi-caret-down-fill text-secondary"></i></li>
+          <li class="p-2">Fashion</li>
+          <li class="p-2">Home & Kitchen</li>
+          <li class="p-2">New Releases</li>
+          <li class="p-2">Amazon Pay</li>
+          <li class="p-2">Books</li>
+        </ul>
+      </div>
+      <div class="subnav-right d-flex align-items-center ms-auto">
+        <div class="promo-banner p-2">
+          <img src="/Physics.png" alt="miniTV Promo">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="carouselExample" class="carousel slide hero-carousel" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/banner_1.png" class="d-block w-100" alt="Banner 1">
+        </div>
+        <div class="carousel-item">
+          <img src="/banner_2.jpg" class="d-block w-100" alt="Banner 2">
+        </div>
+        <div class="carousel-item">
+          <img src="/banner_3.jpg" class="d-block w-100" alt="Banner 3">
+        </div>
+        <div class="carousel-item">
+          <img src="/banner_4.jpg" class="d-block w-100" alt="Banner 4">
+        </div>
+        <div class="carousel-item">
+          <img src="/banner_5.png" class="d-block w-100" alt="Banner 5">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="container-fluid product-grid px-4">
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+          <div class="card p-3 h-100">
+            <h5 class="card-title mb-3">Top rated, premium quality | Amazon Brands & more</h5>
+            <div class="row g-2 quad-images">
+              <a href="products.html?category=home" class="col-6 text-decoration-none text-dark">
+                <img src="/home_products.png" alt="Home Products" class="img-fluid">
+                <span class="small-text">Home Products | up to 50% off</span>
+              </a>
+              <a href="products.html?category=furniture" class="col-6 text-decoration-none text-dark">
+                <img src="/furniture.png" alt="Furniture" class="img-fluid">
+                <span class="small-text">Furniture | up to 60% off</span>
+              </a>
+              <a href="products.html?category=essentials" class="col-6 text-decoration-none text-dark">
+                <img src="/daily_esential.png" alt="Daily essentials" class="img-fluid">
+                <span class="small-text">Daily essentials</span>
+              </a>
+              <a href="products.html?category=fashion" class="col-6 text-decoration-none text-dark">
+                <img src="/fashions.png" alt="Fashion" class="img-fluid">
+                <span class="small-text">Fashion</span>
+              </a>
+            </div>
+            <a href="products.html" class="card-link mt-3">See more</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+          <div class="card p-3 h-100">
+            <h5 class="card-title mb-3">Top picks for your home</h5>
+            <div class="row g-2 quad-images">
+              <a href="products.html?category=air_conditioners" class="col-6 text-decoration-none text-dark">
+                <img src="/air_conditioner.png" alt="Air conditioners" class="img-fluid">
+                <span class="small-text">Air conditioners</span>
+              </a>
+              <a href="products.html?category=refrigerators" class="col-6 text-decoration-none text-dark">
+                <img src="/refrigerator.png" alt="Refrigerators" class="img-fluid">
+                <span class="small-text">Refrigerators</span>
+              </a>
+              <a href="products.html?category=microwaves" class="col-6 text-decoration-none text-dark">
+                <img src="/microwaves.png" alt="Microwaves" class="img-fluid">
+                <span class="small-text">Microwaves</span>
+              </a>
+              <a href="products.html?category=washing_machines" class="col-6 text-decoration-none text-dark">
+                <img src="/washing_machines.png" alt="Washing machines" class="img-fluid">
+                <span class="small-text">Washing machines</span>
+              </a>
+            </div>
+            <a href="products.html" class="card-link mt-3">See more</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+          <div class="card p-3 h-100">
+            <h5 class="card-title mb-3">Upgrade your home | Amazon Brands & more</h5>
+            <div class="row g-2 quad-images">
+              <a href="products.html?category=led_tvs" class="col-6 text-decoration-none text-dark">
+                <img src="/led.png" alt="LED TVs" class="img-fluid">
+                <span class="small-text">Up to 45% off | Smart LED TVs</span>
+              </a>
+              <a href="products.html?category=appliances" class="col-6 text-decoration-none text-dark">
+                <img src="/appliances.png" alt="Appliances" class="img-fluid">
+                <span class="small-text">Up to 45% off | Appliances</span>
+              </a>
+              <a href="products.html?category=furniture" class="col-6 text-decoration-none text-dark">
+                <img src="/furnitures_2.png" alt="Furniture" class="img-fluid">
+                <span class="small-text">Up to 60% off | Furniture</span>
+              </a>
+              <a href="products.html?category=kitchen" class="col-6 text-decoration-none text-dark">
+                <img src="/kitchen_products.png" alt="Kitchen products" class="img-fluid">
+                <span class="small-text">Up to 60% off | Kitchen products</span>
+              </a>
+            </div>
+            <a href="products.html" class="card-link mt-3">Shop now</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+          <div class="d-flex flex-column gap-4 h-100">
+            <div class="card p-3 flex-grow-0">
+              <h5 class="card-title mb-3 fs-5 fw-bold">Sign in for your best experience</h5>
+              <a href="signin.html"
+                class="btn btn-warning w-100 rounded-2 py-1 fw-normal border shadow-sm text-decoration-none text-dark text-center d-block">Sign
+                in securely</a>
+            </div>
+            <a href="products.html?category=laptops" class="promo-card flex-grow-1">
+              <img src="/laptops.png" alt="Laptops" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            </a>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <!-- Card 5 (Travel) -->
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+          <div class="card p-3 h-100">
+            <h5 class="card-title mb-3">Exclusive offers on travel tickets</h5>
+            <div class="row g-2 quad-images">
+              <div class="col-6 text-dark">
+                <img src="/flights.png" alt="Flights" class="img-fluid">
+                <span class="small-text">Get up to ₹ 2000 off on flights</span>
+              </div>
+              <div class="col-6 text-dark">
+                <img src="/train.png" alt="Train" class="img-fluid">
+                <span class="small-text">Zero convenience fees on train tickets</span>
+              </div>
+              <div class="col-6 text-dark">
+                <img src="/travels.png" alt="Bus" class="img-fluid">
+                <span class="small-text">Guaranteed rewards on bus tickets</span>
+              </div>
+              <div class="col-6 text-dark">
+                <img src="/travel_products.png" alt="Travel needs" class="img-fluid">
+                <span class="small-text">Products for your travel needs</span>
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="card-link mt-3 text-decoration-none">See all offres</a>
+          </div>
+        </div>
+
+        <!-- Card 6 (Shop by Category) -->
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+          <div class="card p-3 h-100">
+            <h5 class="card-title mb-3">Shop by Category</h5>
+            <div class="row g-2 quad-images">
+              <a href="products.html?category=fresh" class="col-6 text-center text-decoration-none text-dark">
+                <img src="/fresh.png" alt="Fresh" class="img-fluid">
+                <span class="small-text d-block">Fresh</span>
+              </a>
+              <a href="products.html?category=mobiles" class="col-6 text-center text-decoration-none text-dark">
+                <img src="/mobiles.png" alt="Mobiles" class="img-fluid">
+                <span class="small-text d-block">Mobiles</span>
+              </a>
+              <a href="products.html?category=fashion" class="col-6 text-center text-decoration-none text-dark">
+                <img src="/fashion.png" alt="Fashion" class="img-fluid">
+                <span class="small-text d-block">Fashion</span>
+              </a>
+              <a href="products.html?category=electronics" class="col-6 text-center text-decoration-none text-dark">
+                <img src="/electronics.png" alt="Electronics" class="img-fluid">
+                <span class="small-text d-block">Electronics</span>
+              </a>
+            </div>
+            <a href="products.html" class="card-link mt-3">See more</a>
+          </div>
+        </div>
+
+        <!-- Card 7 (Tools) -->
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+          <div class="card p-3 h-100">
+            <h5 class="card-title mb-3">Professional tools, testing & more Up to 60% OFF</h5>
+            <div class="row g-2 quad-images">
+              <a href="products.html?category=tools" class="col-6 text-decoration-none text-dark">
+                <img src="/professional_tools.png" alt="Tools" class="img-fluid">
+                <span class="small-text">Professional tools</span>
+              </a>
+              <a href="products.html?category=measuring" class="col-6 text-decoration-none text-dark">
+                <img src="/measuring.png" alt="Measuring" class="img-fluid">
+                <span class="small-text">Measuring instruments</span>
+              </a>
+              <a href="products.html?category=cleaning" class="col-6 text-decoration-none text-dark">
+                <img src="/cleaning.png" alt="Cleaning" class="img-fluid">
+                <span class="small-text">Cleaning supplies</span>
+              </a>
+              <a href="products.html?category=medical" class="col-6 text-decoration-none text-dark">
+                <img src="/medical.png" alt="Medical" class="img-fluid">
+                <span class="small-text">Medical supplies</span>
+              </a>
+            </div>
+            <a href="products.html" class="card-link mt-3">See more</a>
+          </div>
+        </div>
+
+        <!-- Card 8 (Revamp) -->
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+          <div class="card p-3 h-100">
+            <h5 class="card-title mb-3">Revamp your home in style</h5>
+            <div class="row g-2 quad-images">
+              <a href="products.html?category=home" class="col-6 text-decoration-none text-dark">
+                <img src="/bedsheet.png" alt="Bedsheets" class="img-fluid">
+                <span class="small-text">Bedsheets, curtains & more</span>
+              </a>
+              <a href="products.html?category=decoration" class="col-6 text-decoration-none text-dark">
+                <img src="/home_decoration.png" alt="Decoration" class="img-fluid">
+                <span class="small-text">Home decoration</span>
+              </a>
+              <a href="products.html?category=home" class="col-6 text-decoration-none text-dark">
+                <img src="/home_storage.png" alt="Storage" class="img-fluid">
+                <span class="small-text">Home storage</span>
+              </a>
+              <a href="products.html?category=lighting" class="col-6 text-decoration-none text-dark">
+                <img src="/lighting_solution.png" alt="Lighting" class="img-fluid">
+                <span class="small-text">Lighting solutions</span>
+              </a>
+            </div>
+            <a href="products.html" class="card-link mt-3">Explore all</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saree Section -->
+      <div class="card mt-4 p-3 border-0 rounded-0 overflow-hidden">
+        <div class="d-flex justify-content-between align-items-baseline mb-3 gap-2 flex-wrap">
+          <h5 class="card-title mb-0 fw-bold">Up to 70% off | Bestsellers in women's clothing</h5>
+          <a href="products.html?category=sarees" class="card-link text-nowrap">See all offres</a>
+        </div>
+        <div class="horizontal-scroll d-flex overflow-auto pb-2">
+          <a href="product_details.html?id=blue-saree"><img src="/blue_saree.png" alt="Saree"></a>
+          <a href="product_details.html?id=green-saree"><img src="/green_saree.png" alt="Saree"></a>
+          <a href="product_details.html?id=saree-35"><img src="/image 35.png" alt="Saree"></a>
+          <a href="product_details.html?id=saree-36"><img src="/image 36.png" alt="Saree"></a>
+          <a href="product_details.html?id=saree-37"><img src="/image 37.png" alt="Saree"></a>
+          <a href="product_details.html?id=saree-38"><img src="/image 38.png" alt="Saree"></a>
+          <a href="product_details.html?id=saree-39"><img src="/image 39.png" alt="Saree"></a>
+          <a href="product_details.html?id=saree-40"><img src="/image 40.png" alt="Saree"></a>
+          <a href="product_details.html?id=saree-41"><img src="/image 41.png" alt="Saree"></a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="back-to-top text-center py-3 text-white small fw-bold" role="button">
+      Back to top
+    </div>
+
+    <div class="footer-main text-white py-5">
+      <div class="container footer-content-wrapper">
+        <div class="row g-4">
+          <div class="col-6 col-md-3">
+            <h6 class="fw-bold mb-3">Get to Know Us</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press Releases</a></li>
+              <li><a href="#">Amazon Science</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6 class="fw-bold mb-3">Connect with Us</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6 class="fw-bold mb-3">Make Money with Us</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">Sell on Amazon</a></li>
+              <li><a href="#">Sell under Amazon Accelerator</a></li>
+              <li><a href="#">Protect and Build Your Brand</a></li>
+              <li><a href="#">Amazon Global Selling</a></li>
+              <li><a href="#">Become an Affiliate</a></li>
+              <li><a href="#">Fulfilment by Amazon</a></li>
+              <li><a href="#">Advertise Your Products</a></li>
+              <li><a href="#">Amazon Pay on Merchants</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6 class="fw-bold mb-3">Let Us Help You</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">COVID-19 and Amazon</a></li>
+              <li><a href="#">Your Account</a></li>
+              <li><a href="#">Returns Centre</a></li>
+              <li><a href="#">100% Purchase Protection</a></li>
+              <li><a href="#">Amazon App Download</a></li>
+              <li><a href="#">Amazon Assistant Download</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-middle py-4 text-white">
+      <div class="container footer-content-wrapper text-center">
+        <div class="d-flex justify-content-center align-items-center gap-4 mb-4">
+          <div class="nav-logo">
+            <img src="logo.png" alt="Amazon Logo" height="24">
+          </div>
+          <div class="dropdown dropup">
+            <div class="language-selector rounded p-1 px-2 d-flex align-items-center gap-2" role="button"
+              id="footerLangDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-globe"></i>
+              <span id="footerLangText">English</span>
+              <div class="d-flex flex-column footer-carets">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </div>
+            </div>
+            <ul class="dropdown-menu" aria-labelledby="footerLangDropdown">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="EN"
+                  data-flag="/india.png">
+                  <img src="/india.png" width="20" alt="India"> English - EN
+                </a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="HI"
+                  data-flag="/india.png">
+                  <img src="/india.png" width="20" alt="India"> हिन्दी - HI
+                </a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="ES" data-flag="/us.png">
+                  <img src="/us.png" width="20" alt="US"> Español - ES
+                </a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="PT"
+                  data-flag="/brazil.png">
+                  <img src="/brazil.png" width="20" alt="Brazil"> Português - PT
+                </a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="DE"
+                  data-flag="/germany.png">
+                  <img src="/germany.png" width="20" alt="Germany"> Deutsch - DE
+                </a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="country-list d-flex justify-content-center flex-wrap gap-2 small">
+          <a href="#">Australia</a>
+          <a href="#">Brazil</a>
+          <a href="#">Canada</a>
+          <a href="#">China</a>
+          <a href="#">France</a>
+          <a href="#">Germany</a>
+          <a href="#">Italy</a>
+          <a href="#">Japan</a>
+          <a href="#">Mexico</a>
+          <a href="#">Netherlands</a>
+          <a href="#">Poland</a>
+          <a href="#">Singapore</a>
+          <a href="#">Spain</a>
+          <a href="#">Turkey</a>
+          <a href="#">United Arab Emirates</a>
+          <a href="#">United Kingdom</a>
+          <a href="#">United States</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom py-4 text-center text-white small">
+      <div class="mb-1">
+        <a href="#" class="me-3">Conditions of Use & Sale</a>
+        <a href="#" class="me-3">Privacy Notice</a>
+        <a href="#">Interest-Based Ads</a>
+      </div>
+      <div>© 1996-2024, Amazon.com, Inc. or its affiliates</div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>

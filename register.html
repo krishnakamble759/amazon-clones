@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Registration</title>
+</head>
+
+<body>
+    <div class="auth-container mb-5">
+        <div class="text-center mb-4 pt-4">
+            <a href="/">
+                <img src="logo.png" alt="Amazon Logo" width="103">
+                <span class="logo-domain">.in</span>
+            </a>
+        </div>
+
+        <div class="auth-box p-4">
+            <h1 class="fw-normal mb-3">Create Account</h1>
+
+            <form id="registerForm">
+                <label for="name" class="form-label fw-bold small">Your name</label>
+                <input type="text" id="name" class="form-control mb-3 shadow-none border"
+                    placeholder="First and last name" required>
+
+                <label for="reg-email" class="form-label fw-bold small">Mobile number or email</label>
+                <input type="email" id="reg-email" class="form-control mb-3 shadow-none border" required>
+
+                <label for="reg-password" class="form-label fw-bold small">Password</label>
+                <input type="password" id="reg-password" class="form-control mb-1 shadow-none border"
+                    placeholder="At least 6 characters" required minlength="6">
+                <div class="small text-muted mb-3 text-11"><i class="bi bi-info-circle"></i> Passwords must be at least
+                    6 characters.</div>
+
+                <label for="reg-password-confirm" class="form-label fw-bold small">Re-enter password</label>
+                <input type="password" id="reg-password-confirm" class="form-control mb-3 shadow-none border" required>
+
+                <button type="submit" class="btn btn-warning w-100 mb-3 shadow-none rounded-2">Continue</button>
+            </form>
+
+            <p class="small text-muted text-12 lh-1-5">
+                By creating an account, you agree to Amazon's <a href="#" class="text-decoration-none">Conditions of
+                    Use</a> and <a href="#" class="text-decoration-none">Privacy Notice</a>.
+            </p>
+
+            <hr class="my-4 border-secondary-subtle">
+
+            <div class="small">
+                Already have an account? <a href="signin.html" class="text-decoration-none">Sign in <i
+                        class="bi bi-caret-right-fill text-11"></i></a>
+            </div>
+        </div>
+
+        <footer class="mt-5 text-center small pt-4 w-100 auth-footer">
+            <div class="mb-2 d-flex justify-content-center gap-4 text-11">
+                <a href="#" class="text-decoration-none text-primary">Conditions of Use</a>
+                <a href="#" class="text-decoration-none text-primary">Privacy Notice</a>
+                <a href="#" class="text-decoration-none text-primary">Help</a>
+            </div>
+            <div class="text-secondary text-11">© 1996-2024, Amazon.com, Inc. or its affiliates</div>
+        </footer>
+    </div>
+
+    <script type="module" src="/src/js/signin.js"></script>
+</body>
+
+</html>

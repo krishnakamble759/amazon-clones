@@ -1,0 +1,67 @@
+@import "variables";
+
+// Cart Page Styles
+.amazon-navbar {
+    .nav-account {
+        .sign-in-prompt {
+            a.btn {
+                font-size: 13px;
+            }
+
+            .small {
+                font-size: 11px;
+            }
+        }
+    }
+
+    .nav-cart {
+        .cart-icon-container {
+            position: relative;
+            margin-bottom: -5px;
+
+            .cart-count {
+                position: absolute;
+                top: -5px;
+                left: 12px;
+                color: $amazon-orange;
+                font-weight: bold;
+                font-size: 16px;
+                min-width: 20px;
+                text-align: center;
+            }
+
+            img {
+                width: 32px;
+                height: auto;
+            }
+        }
+
+        &.cart-animate {
+            animation: cart-bounce 0.5s ease;
+        }
+    }
+}
+
+@keyframes cart-bounce {
+
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+main.container {
+    .empty-cart {
+        img {
+            width: 200px;
+            margin-bottom: 30px;
+        }
+    }
+}

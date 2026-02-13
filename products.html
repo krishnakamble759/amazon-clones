@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Products</title>
+</head>
+
+<body>
+  <div id="google_translate_element" class="google-translate-container"></div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar Menu -->
+  <div class="amazon-sidebar shadow" id="amazonSidebar">
+    <a href="signin.html" class="sidebar-header d-flex align-items-center text-white text-decoration-none w-100">
+      <i class="bi bi-person-circle fs-4 me-2"></i>
+      <h5 class="mb-0 fs-6 fw-bold">Hello, sign in</h5>
+      <button class="btn-close btn-close-white ms-auto" id="closeSidebar" onclick="event.preventDefault();"></button>
+    </a>
+    <div class="sidebar-content">
+      <div class="sidebar-section">
+        <h6 class="section-title">Digital Content & Devices</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Prime Video <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">Amazon Music <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">Kindle E-readers & Books <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">Amazon Appstore <i class="bi bi-chevron-right ms-auto"></i></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h6 class="section-title">Shop by Department</h6>
+        <ul class="list-unstyled">
+          <li><a href="products.html?category=electronics">Electronics <i class="bi bi-chevron-right ms-auto"></i></a>
+          </li>
+          <li><a href="products.html?category=computers">Computers <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="products.html?category=smart_home">Smart Home <i class="bi bi-chevron-right ms-auto"></i></a>
+          </li>
+          <li><a href="products.html?category=arts_crafts">Arts & Crafts <i class="bi bi-chevron-right ms-auto"></i></a>
+          </li>
+
+          <div class="extra-categories d-none">
+            <li><a href="#">Automotive <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Baby <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Beauty and Personal Care <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Women's Fashion <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Men's Fashion <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Girls' Fashion <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Boys' Fashion <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Health and Household <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Home and Kitchen <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Industrial and Scientific <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Luggage <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Movies & Television <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Pet supplies <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Software <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Sports and Outdoors <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Tools & Home Improvement <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Toys and Games <i class="bi bi-chevron-right ms-auto"></i></a></li>
+            <li><a href="#">Video Games <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          </div>
+
+          <li><a href="javascript:void(0)" class="see-all-toggle">See all <i class="bi bi-chevron-down ms-1"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h6 class="section-title">Programs & Features</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Gift Cards <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">Shop By Interest <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">Amazon Live <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="#">International Shopping <i class="bi bi-chevron-right ms-auto"></i></a></li>
+          <li><a href="javascript:void(0)" class="see-all-toggle">See all <i class="bi bi-chevron-down ms-1"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <h6 class="section-title">Help & Settings</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Your Account</a></li>
+          <li><a href="#"><i class="bi bi-globe me-2"></i> English</a></li>
+          <li><a href="#"><img src="/india.png" alt="India" class="me-2"> India</a></li>
+          <li><a href="#">Customer Service</a></li>
+          <li><a href="signin.html">Sign in</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <header>
+    <nav class="amazon-navbar">
+      <div class="nav-left d-flex align-items-center">
+        <div class="nav-logo">
+          <a href="/">
+            <img src="logo.png" alt="Amazon Logo">
+            <span class="logo-domain">.in</span>
+          </a>
+        </div>
+
+        <div class="nav-address d-flex align-items-center ms-2 text-white">
+          <div class="address-icon me-1">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <div class="address-text">
+            <span class="line-1">Hello</span><br>
+            <span class="line-2">Select your address</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-fill">
+        <div class="nav-search">
+          <div class="nav-search-scope border-end dropdown">
+            <div role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span>All</span>
+              <i class="bi bi-caret-down-fill ms-1"></i>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">All Categories</a></li>
+              <li><a class="dropdown-item" href="#">Alexa Skills</a></li>
+              <li><a class="dropdown-item" href="#">Amazon Devices</a></li>
+              <li><a class="dropdown-item" href="#">Amazon Fashion</a></li>
+              <li><a class="dropdown-item" href="#">Amazon Fresh</a></li>
+              <li><a class="dropdown-item" href="#">Amazon Pharmacy</a></li>
+              <li><a class="dropdown-item" href="#">Appliances</a></li>
+              <li><a class="dropdown-item" href="#">Apps & Games</a></li>
+              <li><a class="dropdown-item" href="#">Baby</a></li>
+              <li><a class="dropdown-item" href="#">Beauty</a></li>
+              <li><a class="dropdown-item" href="#">Books</a></li>
+              <li><a class="dropdown-item" href="#">Electronics</a></li>
+            </ul>
+          </div>
+          <input type="text" placeholder="Search Amazon.in">
+          <button class="nav-search-submit" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-right d-flex align-items-center">
+        <div class="nav-lang dropdown mx-2 p-1">
+          <div class="d-flex align-items-center" role="button" id="languageDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img src="/india.png" alt="India Flag" class="flag-icon me-1" id="currentFlag">
+            <span class="lang-text fw-bold" id="currentLang">EN</span>
+            <i class="bi bi-caret-down-fill ms-1"></i>
+          </div>
+          <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="EN"
+                data-flag="/public/india.png">
+                <img src="/india.png" alt="India"> English - EN
+              </a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="HI"
+                data-flag="/public/india.png">
+                <img src="/india.png" alt="India"> हिन्दी - HI
+              </a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="ES"
+                data-flag="/public/us.png">
+                <img src="/us.png" alt="US"> Español - ES
+              </a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="PT"
+                data-flag="/public/brazil.png">
+                <img src="/brazil.png" alt="Brazil"> Português - PT
+              </a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="DE"
+                data-flag="/public/germany.png">
+                <img src="/germany.png" alt="Germany"> Deutsch - DE
+              </a></li>
+          </ul>
+        </div>
+        <div class="nav-account dropdown mx-2 p-1">
+          <div role="button" id="navAccountDropdown" data-bs-toggle="dropdown" data-bs-display="static"
+            aria-expanded="false">
+            <span class="line-1">Hello, sign in</span><br>
+            <span class="line-2 fw-bold">Account & Lists</span>
+            <i class="bi bi-caret-down-fill"></i>
+          </div>
+          <div class="dropdown-menu dropdown-menu-end account-dropdown-menu shadow"
+            aria-labelledby="navAccountDropdown">
+            <div class="text-center mb-3 pb-3 border-bottom sign-in-prompt" id="signInPrompt">
+              <a href="signin.html" class="btn btn-warning sign-in-btn mb-2 fw-bold">Sign in</a>
+              <div class="small">New customer? <a href="register.html" class="text-primary">Start here.</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 account-column-lists">
+                <h6 class="fw-bold mb-2">Your Lists</h6>
+                <ul class="list-unstyled small d-flex flex-column gap-1">
+                  <li><a href="#">Create a List</a></li>
+                  <li><a href="#">Find a List or Registry</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <h6 class="fw-bold mb-2">Your Account</h6>
+                <ul class="list-unstyled small d-flex flex-column gap-1">
+                  <li><a href="#">Account</a></li>
+                  <li><a href="#">Orders</a></li>
+                  <li><a href="#">Recommendations</a></li>
+                  <li><a href="#">Browsing History</a></li>
+                  <li><a href="#">Watchlist</a></li>
+                  <li><a href="#">Video Purchases & Rentals</a></li>
+                  <li><a href="#">Kindle Unlimited</a></li>
+                  <li><a href="#">Content & Devices</a></li>
+                  <li><a href="#">Subscribe & Save Items</a></li>
+                  <li><a href="#">Memberships & Subscriptions</a></li>
+                  <li><a href="#">Music Library</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-orders mx-2 p-1">
+          <a href="signin.html" class="text-decoration-none text-white">
+            <span class="line-1 text-nowrap">Returns</span><br>
+            <span class="line-2 fw-bold">& Orders</span>
+          </a>
+        </div>
+        <a href="cart.html"
+          class="nav-cart d-flex align-items-end mx-2 p-1 position-relative text-decoration-none text-white">
+          <div class="cart-icon-container">
+            <span class="cart-count">0</span>
+            <img src="/cart.png" alt="Cart">
+          </div>
+          <span class="ms-1 fw-bold cart-text">Cart</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="amazon-subnav d-flex align-items-center">
+      <div class="subnav-left d-flex align-items-center">
+        <div class="subnav-all p-2 d-flex align-items-center">
+          <i class="bi bi-list"></i>
+          <span class="ms-1 fw-bold">All</span>
+        </div>
+        <ul class="subnav-links d-flex align-items-center mb-0 list-unstyled">
+          <li class="p-2">Best Sellers</li>
+          <li class="p-2">Mobiles</li>
+          <li class="p-2"><a href="products.html?category=fresh" class="text-white text-decoration-none">Amazon
+              Fresh</a></li>
+          <li class="p-2">Today's Deals</li>
+          <li class="p-2">Customer Service</li>
+          <li class="p-2">Electronics</li>
+          <li class="p-2">Prime <i class="bi bi-caret-down-fill text-secondary"></i></li>
+          <li class="p-2">Fashion</li>
+          <li class="p-2">Home & Kitchen</li>
+          <li class="p-2">New Releases</li>
+          <li class="p-2">Amazon Pay</li>
+          <li class="p-2">Books</li>
+        </ul>
+      </div>
+      <div class="subnav-right d-flex align-items-center ms-auto">
+        <div class="promo-banner p-2">
+          <img src="/Physics.png" alt="miniTV Promo">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-fluid bg-white products-main px-0">
+    <!-- Top Bar for Mobile Filters could go here -->
+
+    <div class="row g-0">
+      <!-- Sidebar (Filters) -->
+      <div class="col-lg-2 d-none d-lg-block border-end p-3 sidebar-container">
+        <h6 class="fw-bold mb-2">Popular Shopping Ideas</h6>
+        <ul class="list-unstyled small ps-0 mb-4 sidebar-links">
+          <div data-filter-category="mobiles" class="filter-group">
+            <li class="fw-bold mb-1 mt-2 text-dark">Mobiles</li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Smartphones</a></li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Feature Phones</a></li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Mobile Accessories</a></li>
+          </div>
+
+          <div data-filter-category="cleaning" class="filter-group">
+            <li class="fw-bold mb-1 mt-3 text-dark">Cleaning</li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Laundry Detergents</a></li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Surface Cleaners</a></li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Toilet Cleaners</a></li>
+          </div>
+
+          <div data-filter-category="tools" class="filter-group">
+            <li class="fw-bold mb-1 mt-3 text-dark">Professional Tools</li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Power Tools</a></li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Testing & Measuring</a></li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Industrial Supplies</a></li>
+          </div>
+
+          <div data-filter-category="fresh" class="filter-group">
+            <li class="fw-bold mb-1 mt-3 text-dark">Fresh Produce</li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Fruits</a></li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Vegetables</a></li>
+            <li><a href="#" class="text-dark text-decoration-none ps-2">Seasonal</a></li>
+          </div>
+
+          <li class="mt-2"><a href="#" class="text-primary text-decoration-none"><i
+                class="bi bi-chevron-down text-11"></i> See more</a></li>
+        </ul>
+
+        <h6 class="fw-bold mb-2">Customer Reviews</h6>
+        <div class="mb-4 review-filter">
+          <div class="d-flex align-items-center mb-1 cursor-pointer">
+            <div class="stars text-warning me-2 text-13">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill text-secondary-subtle"></i>
+            </div>
+            <span class="small">& Up</span>
+          </div>
+          <div class="d-flex align-items-center mb-1 cursor-pointer">
+            <div class="stars text-warning me-2 text-13">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill text-secondary-subtle"></i>
+              <i class="bi bi-star-fill text-secondary-subtle"></i>
+            </div>
+            <span class="small">& Up</span>
+          </div>
+        </div>
+
+        <h6 class="fw-bold mb-2">Deals & Discounts</h6>
+        <ul class="list-unstyled small ps-0 mb-4 sidebar-links">
+          <li><a href="#" class="text-dark text-decoration-none">All Discounts</a></li>
+          <li><a href="#" class="text-dark text-decoration-none">Today's Deals</a></li>
+        </ul>
+
+        <h6 class="fw-bold mb-2">Brands</h6>
+        <div class="d-flex flex-column gap-1 small brand-list">
+          <div data-filter-category="mobiles" class="filter-group">
+            <div class="fw-bold mb-1 mt-1 text-dark">Mobile Brands</div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="mbrand1">
+              <label class="form-check-label" for="mbrand1">Apple</label>
+            </div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="mbrand2">
+              <label class="form-check-label" for="mbrand2">Samsung</label>
+            </div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="mbrand1">
+              <label class="form-check-label" for="mbrand1">OnePlus</label>
+            </div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="mbrand2">
+              <label class="form-check-label" for="mbrand2">Realme</label>
+            </div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="mbrand1">
+              <label class="form-check-label" for="mbrand1">Redmi</label>
+            </div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="mbrand2">
+              <label class="form-check-label" for="mbrand2">Motorola</label>
+            </div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="mbrand1">
+              <label class="form-check-label" for="mbrand1">Nothing</label>
+            </div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="mbrand2">
+              <label class="form-check-label" for="mbrand2">Google</label>
+            </div>
+          </div>
+
+          <div data-filter-category="fresh" class="filter-group">
+            <div class="fw-bold mb-1 mt-1 text-dark">Fresh Brands</div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="fbrand1">
+              <label class="form-check-label" for="fbrand1">Amazon Fresh</label>
+            </div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="fbrand2">
+              <label class="form-check-label" for="fbrand2">Organic Hub</label>
+            </div>
+          </div>
+
+          <div data-filter-category="cleaning" class="filter-group">
+            <div class="fw-bold mb-1 mt-2 text-dark">Cleaning Brands</div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="cbrand1">
+              <label class="form-check-label" for="cbrand1">Dettol</label>
+            </div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="cbrand2">
+              <label class="form-check-label" for="cbrand2">Ariel</label>
+            </div>
+            <div class="form-check ps-4">
+              <input class="form-check-input rounded-1" type="checkbox" id="cbrand3">
+              <label class="form-check-label" for="cbrand3">Lysol</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Results -->
+      <div class="col-12 col-lg-10 p-3">
+        <div class="mb-3">
+          <h1 id="category-title" class="fw-bold fs-4 mb-0">Results</h1>
+          <p class="text-muted small mb-0">Check each product page for other buying options. Price and other
+            details may vary based on product size and color.</p>
+        </div>
+
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-3" id="product-grid">
+          <!-- JS Populated -->
+          <div class="col text-center w-100 mt-5">
+            <div class="spinner-border text-warning" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="back-to-top text-center py-3 text-white small fw-bold" role="button">
+      Back to top
+    </div>
+
+    <div class="footer-main text-white py-5">
+      <div class="container footer-content-wrapper">
+        <div class="row g-4">
+          <div class="col-6 col-md-3">
+            <h6 class="fw-bold mb-3">Get to Know Us</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press Releases</a></li>
+              <li><a href="#">Amazon Science</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6 class="fw-bold mb-3">Connect with Us</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6 class="fw-bold mb-3">Make Money with Us</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">Sell on Amazon</a></li>
+              <li><a href="#">Sell under Amazon Accelerator</a></li>
+              <li><a href="#">Protect and Build Your Brand</a></li>
+              <li><a href="#">Amazon Global Selling</a></li>
+              <li><a href="#">Become an Affiliate</a></li>
+              <li><a href="#">Fulfilment by Amazon</a></li>
+              <li><a href="#">Advertise Your Products</a></li>
+              <li><a href="#">Amazon Pay on Merchants</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h6 class="fw-bold mb-3">Let Us Help You</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2 small">
+              <li><a href="#">COVID-19 and Amazon</a></li>
+              <li><a href="#">Your Account</a></li>
+              <li><a href="#">Returns Centre</a></li>
+              <li><a href="#">100% Purchase Protection</a></li>
+              <li><a href="#">Amazon App Download</a></li>
+              <li><a href="#">Amazon Assistant Download</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-middle py-4 text-white">
+      <div class="container footer-content-wrapper text-center">
+        <div class="d-flex justify-content-center align-items-center gap-4 mb-4">
+          <div class="nav-logo">
+            <img src="logo.png" alt="Amazon Logo">
+          </div>
+          <div class="dropdown dropup">
+            <div class="language-selector rounded p-1 px-2 d-flex align-items-center gap-2" role="button"
+              id="footerLangDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-globe"></i>
+              <span id="footerLangText">English</span>
+              <div class="d-flex flex-column footer-carets">
+                <i class="bi bi-caret-up-fill"></i>
+                <i class="bi bi-caret-down-fill"></i>
+              </div>
+            </div>
+            <ul class="dropdown-menu" aria-labelledby="footerLangDropdown">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="EN"
+                  data-flag="/public/india.png">
+                  <img src="/india.png" alt="India"> English - EN
+                </a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="HI"
+                  data-flag="/public/india.png">
+                  <img src="/india.png" alt="India"> हिन्दी - HI
+                </a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="ES"
+                  data-flag="/public/us.png">
+                  <img src="/us.png" alt="US"> Español - ES
+                </a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="PT"
+                  data-flag="/public/brazil.png">
+                  <img src="/brazil.png" alt="Brazil"> Português - PT
+                </a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="#" data-lang="DE"
+                  data-flag="/public/germany.png">
+                  <img src="/germany.png" alt="Germany"> Deutsch - DE
+                </a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="country-list d-flex justify-content-center flex-wrap gap-2 small">
+          <a href="#">Australia</a>
+          <a href="#">Brazil</a>
+          <a href="#">Canada</a>
+          <a href="#">China</a>
+          <a href="#">France</a>
+          <a href="#">Germany</a>
+          <a href="#">Italy</a>
+          <a href="#">Japan</a>
+          <a href="#">Mexico</a>
+          <a href="#">Netherlands</a>
+          <a href="#">Poland</a>
+          <a href="#">Singapore</a>
+          <a href="#">Spain</a>
+          <a href="#">Turkey</a>
+          <a href="#">United Arab Emirates</a>
+          <a href="#">United Kingdom</a>
+          <a href="#">United States</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom py-4 text-center text-white small">
+      <div class="mb-1">
+        <a href="#" class="me-3">Conditions of Use & Sale</a>
+        <a href="#" class="me-3">Privacy Notice</a>
+        <a href="#">Interest-Based Ads</a>
+      </div>
+      <div>© 1996-2024, Amazon.com, Inc. or its affiliates</div>
+    </div>
+  </footer>
+
+  <template id="product-card-template">
+    <div class="col">
+      <div class="card h-100">
+        <div class="img-wrapper">
+          <div class="badge-overlay"></div>
+          <img src="" class="card-img-top" alt="">
+        </div>
+        <div class="card-body">
+          <div class="sponsored-label"><i class="bi bi-info-circle"></i> Sponsored</div>
+          <h5 class="card-title"><a href="#" class="text-decoration-none hover-underline text-dark"></a></h5>
+          <div class="rating-block">
+            <div class="stars"></div>
+            <span class="count"></span>
+          </div>
+          <div class="bought-count"></div>
+          <div class="price-block mb-1">
+            <span class="price"><span class="symbol">₹</span><span class="price-value"></span></span>
+            <span class="old-price"></span>
+          </div>
+          <img src="medical/prime.png" class="prime-icon" alt="Prime">
+          <div class="delivery-info">
+            FREE delivery <span class="date"></span>
+          </div>
+          <button class="btn btn-warning btn-add-cart mt-auto">Add to cart</button>
+          <button class="btn btn-see-options mt-auto d-none">See options</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+
+  <section id="products-source" style="display: none;">
+    <section class="category-data" data-category="mobiles">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=iphone-15-pro-renewed"
+            class="text-dark text-decoration-none">Apple iPhone 15
+            Pro, 128GB, Black Titanium - Verizon (Renewed)</a></h3>
+        <img src="/mobiles/iphone_1.jpg" alt="iPhone 15 (128 GB) - Black" class="product-img">
+        <div class="product-price">66,990</div>
+        <div class="product-original-price">79,900</div>
+        <div class="product-rating">2.3</div>
+        <div class="product-reviews">5</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=samsung-s24-ultra"
+            class="text-dark text-decoration-none">SAMSUNG Galaxy S24 Ultra SM-S928B/DS 12GB 256GB Dual Sim Factory
+            Unlocked International Model (Titanium Grey)</a></h3>
+        <img src="/mobiles/samung_galaxy_s24.jpg" alt="Samsung Galaxy S24 Ultra 5G (Titanium Gray)"
+          class="product-img">
+        <div class="product-price">1,29,999</div>
+        <div class="product-original-price">1,44,900</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">2,000</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=oneplus-15"
+            class="text-dark text-decoration-none">OnePlus 15, 12GB RAM + 256GB Storage, Dual-SIM, Unlocked Android
+            Smartphone,
+            Snapdragon 8 Elite Gen 5, 7300mAh Battery, Infinite Black</a></h3>
+        <img src="/mobiles/one_plus_1.jpg" alt="OnePlus 15 (Infinite Black, 12GB RAM)" class="product-img">
+        <div class="product-price">81,464.39</div>
+        <div class="product-original-price">85,000</div>
+        <div class="product-rating">4.4</div>
+        <div class="product-reviews">82</div>
+        <span class="product-sponsored">true</span>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title">
+          <a href="/product_details.html?id=redmi-note-13-pro-plus" class="text-dark text-decoration-none">
+            Xiaomi Redmi Note 13 Pro+ 5G (512/12GB) 6.67" 200MP Triple (for Tmobile Mint Tello & Global) Global GSM
+            Bands Unlocked (Midnight Black)
+          </a>
+        </h3>
+        <img src="/mobiles/redmi_midnight_black.jpg" alt="Xiaomi Redmi Note 13 Pro+ 5G (Midnight Black)"
+          class="product-img">
+        <div class="product-price">27,064.58</div>
+        <div class="product-original-price">30,000</div>
+        <div class="product-rating">4.4</div>
+        <div class="product-reviews">2,771</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=realme-note-70t"
+            class="text-dark text-decoration-none">realme Note 70T 4G Smartphone 4+128GB, 6.75 inch Screen, Black,
+            90Hz Display, 6000mAh Battery, 32MP Camera, Powerful Octa-core Processor, ArmorShell Protection, IP54</a>
+        </h3>
+        <img src="/mobiles/realme_1.jpg" alt="realme Note 70T" class="product-img">
+        <div class="product-price">7,965.50</div>
+        <div class="product-original-price">10,999</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">25,000</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=google-pixel-8-pro"
+            class="text-dark text-decoration-none">Google Pixel 8 Pro - Unlocked Android Smartphone with Telephoto Lens
+            and Super Actua Display - 24-Hour Battery - Porcelain - 128 GB</a></h3>
+        <img src="/mobiles/google_pixel_1.jpg" alt="Google Pixel 8 Pro" class="product-img">
+        <div class="product-price">1,06,999</div>
+        <div class="product-original-price">1,13,999</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">3,482</div>
+        <span class="product-badge">Overall Pick</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=motorola-moto-g75-5g"
+            class="text-dark text-decoration-none">Motorola Moto G75 5G (XT2437-2) Dual Sim 8+256GB | International
+            Model | GSM Factory Unlocked | Compatible with Metro PCS, T-Mobile, Mint, Tello | 6.78" LCD Display | 50MP
+            Camera - (Blue)</a></h3>
+        <img src="/mobiles/motorola_1.jpg" alt="Motorola Moto G75 5G (Blue)" class="product-img">
+        <div class="product-price">21,507</div>
+        <div class="product-original-price">25,999</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">5,000</div>
+
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=nothing-phone-3"
+            class="text-dark text-decoration-none">Nothing Phone (3) Cell Phone, 5G Unlocked Phones 256GB, Android 15,
+            Snapdragon 8s Gen4, AI Mobile Phones with Four 50MP Cameras & AMOLED Display, 5150mAh, Glyph Interface,
+            Smartphone Black</a></h3>
+        <img src="/mobiles/nothing_1.jpg" alt="Nothing Phone (3) Black" class="product-img">
+        <div class="product-price">57,865</div>
+        <div class="product-original-price">72,355</div>
+        <div class="product-rating">4.4</div>
+        <div class="product-reviews">223</div>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="cleaning">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lysol-multi-surface-cleaner"
+            class="text-dark text-decoration-none">Lysol Multi-Surface Cleaner, Sanitizing and Disinfecting Pour, to
+            Clean and Deodorize, Sparkling Lemon and Sunflower Essence, 40 Fl Oz</a></h3>
+        <img src="/cleaning/lyzol_1.jpg" alt="Lysol Multi-Surface Cleaner" class="product-img">
+        <div class="product-price">345</div>
+        <div class="product-original-price">385</div>
+        <div class="product-rating">4.8</div>
+        <div class="product-reviews">25,241</div>
+        <span class="product-badge">Best Seller</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=zep-acidic-toilet-bowl-cleaner"
+            class="text-dark text-decoration-none">Zep Acidic Toilet Bowl Cleaner - 32 oz (Case of 4) - ZUATBC324 -
+            Experience the Ultimate Cleaning Power with Our 2x Thicker Clinging Formula, Designed to Deliver a
+            Professional-Quality Clean</a></h3>
+        <img src="/cleaning/zep_1.jpg" alt="Zep Acidic Toilet Bowl Cleaner" class="product-img">
+        <div class="product-price">1,499</div>
+        <div class="product-original-price">1,899</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">1,954</div>
+        <span class="product-badge">Top Choice</span>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=sprayway-glass-cleaner"
+            class="text-dark text-decoration-none">Sprayway Ammonia-Free Glass Cleaner, Foaming Action - Streakless
+            Shine, 15 Ounce (Pack of 1)</a></h3>
+        <img src="/cleaning/sprayway_1.jpg"
+          alt="Sprayway Ammonia-Free Glass Cleaner, Foaming Action - Streakless Shine, 15 Ounce (Pack of 1) "
+          class="product-img">
+        <div class="product-price">95</div>
+        <div class="product-original-price">110</div>
+        <div class="product-rating">4.4</div>
+        <div class="product-reviews">12,000</div>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=dettol-handwash"
+            class="text-dark text-decoration-none">Dettol Original everyday Protection Liquid Handwash - 200ml</a></h3>
+        <img src="/cleaning/dettol_1.jpg" alt="Dettol Original everyday Protection Liquid Handwash - 200ml"
+          class="product-img">
+        <div class="product-price">159</div>
+        <div class="product-original-price">199</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">18,000</div>
+        <span class="product-badge">Amazon's Choice</span>
+
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=gala-no-dust-broom"
+            class="text-dark text-decoration-none">Gala No Dust Floor Broom (Freedom from New Broom Dust- Busan), 2
+            Count</a></h3>
+        <img src="/cleaning/gala_1.jpg"
+          alt="Gala No Dust Floor Broom (Freedom from New Broom Dust- Busan), 2 Count" class="product-img">
+        <div class="product-price">180</div>
+        <div class="product-original-price">210</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">55,000</div>
+
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=ariel-laundry-powder"
+            class="text-dark text-decoration-none">ARIEL Laundry Powder Detergent 500G Aroma Original 3-Pack</a></h3>
+        <img src="/cleaning/ariel.jpg" alt="ARIEL Laundry Powder Detergent 500G Aroma Original 3-Pack"
+          class="product-img">
+        <div class="product-price">450</div>
+        <div class="product-original-price">550</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">20,000</div>
+
+      </article>
+    </section>
+    <section class="category-data" data-category="decoration">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=ganesha-wall-art"
+            class="text-dark text-decoration-none">Slickss Gold Ganesha Wall Decor, Hindu Lord Ganapati Metal Wall Art -
+            Indian Wall Decor for Pooja Room, Festival, Living Room, Unique Spiritual Gift & Home Decoration</a></h3>
+        <img src="/decoration/ganesha_1.jpg" alt="Slickss Gold Ganesha Wall Decor" class="product-img">
+        <div class="product-price">899</div>
+        <div class="product-original-price">1,500</div>
+        <div class="product-rating">4.4</div>
+        <div class="product-reviews">2,000</div>
+        <span class="product-badge">Best Seller</span>
+
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=ten49-floating-shelves"
+            class="text-dark text-decoration-none">TEN49 Real Wood Rustic Floating Shelves Wall - 24 Wide Small Wooden
+            Industrial Pipe Shelving - Farmhouse Pipe Wall Shelves Furniture Bathroom Decor Art Shelf Kitchen - Light
+            Walnut Color - Set of 2</a></h3>
+        <img src="/decoration/ten49_1.jpg" alt="TEN49 Real Wood Rustic Floating Shelves" class="product-img">
+        <div class="product-price">4,548</div>
+        <div class="product-original-price">999</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">8,500</div>
+
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=buddha-statue"
+            class="text-dark text-decoration-none">TIED RIBBONS 4 Pcs Baby Buddha Statue | Resin, 2 Inch | Buddha Monk
+            Statue for Buddha Gifts, Car Dashboard Decoration, Office, Table, Shelves, Home, Living Room, Buddha Decor |
+            Mini Buddha Statue</a></h3>
+        <img src="/decoration/teid_1.jpg" alt="TIED RIBBONS 4 Pcs Baby Buddha Statue" class="product-img">
+        <div class="product-price">399</div>
+        <div class="product-original-price">800</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">752</div>
+
+      </article>
+    </section>
+    <section class="category-data" data-category="furniture">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=shoe-storage-organizer"
+            class="text-dark text-decoration-none">Thickened Clear Shoe Storage Organizer with Magnetic Door, Sturdy
+            Stackable Shoe Boxes for Closet, Collapsible Space-Saving Shoe Rack for Sneakers & Boots, Plastic Shoe
+            Cabinet Box Set, 6 Pack, White</a></h3>
+        <img src="/decoration/thickner_1.jpg" alt="Thickened Clear Shoe Storage Organizer" class="product-img">
+        <div class="product-price">3,620</div>
+        <div class="product-original-price">5,432</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">7,289</div>
+        <span class="product-badge">Best Seller</span>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=folding-desk"
+            class="text-dark text-decoration-none">Folding Desk - 31.5" Wood Top Foldable Desk for Small Spaces | No
+            Assembly Required Compact Desk for Home Office, Writing, and Study</a></h3>
+        <img src="/decoration/desk_1.jpg" alt="Folding Desk - 31.5 Wood Top" class="product-img">
+        <div class="product-price">5,961</div>
+        <div class="product-original-price">8,338</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">823</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=cordaroys-bean-bag"
+            class="text-dark text-decoration-none">CordaRoy's Chenille Bean Bag-Convertible Bean Bag
+            Chair-Machine-Washable Chenille Fabric Cover-for Basement,Living Room,Game Room,Dorm & More - Queen Size -
+            Charcoal | Made in The USA</a></h3>
+        <img src="/decoration/bean_1.jpg" alt="CordaRoy's Chenille Bean Bag" class="product-img">
+        <div class="product-price">31,694</div>
+        <div class="product-original-price">36,710</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">8,834</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=wooden-bookcase"
+            class="text-dark text-decoration-none">5-Tier Wooden Open Bookcase - Modern Display Bookshelf with Top Edge
+            and Solid Wood Frame for Home and Office, Storage Cabinet, Oak</a></h3>
+        <img src="/decoration/bookcase_1.jpg" alt="5-Tier Wooden Open Bookcase" class="product-img">
+        <div class="product-price">11,763</div>
+        <div class="product-original-price">15,000</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">410</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+    </section>
+    <section class="category-data" data-category="fashion">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=levis-511-slim"
+            class="text-dark text-decoration-none">Levi's Men's 511 Slim Fit Jeans (Also Available in Big & Tall)</a>
+        </h3>
+        <img src="/fashion/levi_1.jpg" alt="Levi's Men's 511 Slim Fit Jeans" class="product-img">
+        <div class="product-price">2,499</div>
+        <div class="product-original-price">4,599</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">55,300</div>
+        <span class="product-badge">Overall Pick</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=puma-court-classic"
+            class="text-dark text-decoration-none">PUMA Men's Court Classic Vulc Sneakers</a></h3>
+        <img src="/fashion/puma_1.jpg" alt="PUMA Men's Court Classic Vulc Sneakers" class="product-img">
+        <div class="product-price">4,345</div>
+        <div class="product-original-price">5,433</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">1,308</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=casio-gshock-metal"
+            class="text-dark text-decoration-none">Men's Casio G-Shock Analog-Digital Watch - GM110-1A with Black Resin
+            Band</a></h3>
+        <img src="/fashion/watch_1.jpg" alt="Casio G-Shock Analog-Digital Watch" class="product-img">
+        <div class="product-price">7,995</div>
+        <div class="product-original-price">9,995</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">3,000</div>
+
+        <span class="product-sponsored">true</span>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="laptops">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=samsung-galaxy-book3-pro"
+            class="text-dark text-decoration-none">SAMSUNG 14” Galaxy Book3 Pro Laptop PC Computer, 13th Gen Intel Core
+            i7-1360P Processor / 16GB / 512GB, 3K AMOLED Screen, 120hz, Fingerprint Reader, FHD Webcam, 2023 Model,
+            NP940XFG-KC2US, Graphite</a></h3>
+        <img src="/laptop/samsung_1.jpg" alt="SAMSUNG 14” Galaxy Book3 Pro Laptop" class="product-img">
+        <div class="product-price">1,28,076</div>
+        <div class="product-original-price">1,50,000</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">353</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=msi-prestige-14-evo"
+            class="text-dark text-decoration-none">msi Prestige 14 EVO 14” FHD+ Business Laptop: Intel Core i7-13620H,
+            Intel Iris Xe, 32GB DDR5, 1TB NVMe SSD, Type-C, Thunderbolt 4, Win 11 Pro: Urban Silver B13M-634US</a></h3>
+        <img src="/laptop/msi1.jpg" alt="msi Prestige 14 EVO Laptop" class="product-img">
+        <div class="product-price">81,500</div>
+        <div class="product-original-price">1,10,000</div>
+        <div class="product-rating">3.6</div>
+        <div class="product-reviews">28</div>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="electronics">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=sony-wh1000xm5"
+            class="text-dark text-decoration-none">Sony WH-1000XM5 Premium Noise Canceling Headphones, Auto NC
+            Optimizer, 30-Hour Battery, Alexa Voice Control, Black</a></h3>
+        <img src="/electronics/sony_1.jpg" alt="Sony WH-1000XM5" class="product-img">
+        <div class="product-price">26,985</div>
+        <div class="product-original-price">36,221</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">18,944</div>
+        <span class="product-badge">Overall Pick</span>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=outdoor-bluetooth-speakers"
+            class="text-dark text-decoration-none">400W AC-Powered Outdoor Bluetooth Speakers | Wireless Sync 100+
+            Speakers | IPX5 Waterproof Wall Mount | for Party, Patio, Porch, Garage (Pair, Black)</a></h3>
+        <img src="/electronics/speaker_1.jpg" alt="400W AC-Powered Outdoor Bluetooth Speakers"
+          class="product-img">
+        <div class="product-price">9,960</div>
+        <div class="product-original-price">12,500</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">55</div>
+        <span class="product-badge">Best Seller</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=roku-streaming-stick-hd-2025"
+            class="text-dark text-decoration-none">Roku Streaming Stick HD 2025 — HD Streaming Device for TV with Roku
+            Voice Remote, Free & Live TV</a></h3>
+        <img src="/electronics/roku1.jpg" alt="Roku Streaming Stick HD 2025" class="product-img">
+        <div class="product-price">3,999</div>
+        <div class="product-original-price">4,999</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">13,421</div>
+        <span class="product-badge">Overall Pick</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=sandisk-128gb-ultra-flair-usb-3-0"
+            class="text-dark text-decoration-none">SanDisk 128GB Ultra Flair USB 3.0 Flash Drive - SDCZ73-128G-G46,
+            black</a></h3>
+        <img src="/electronics/usb_1.jpg" alt="SanDisk 128GB Ultra Flair USB 3.0 Flash Drive"
+          class="product-img">
+        <div class="product-price">1,619.16</div>
+        <div class="product-original-price">1,853.70</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">204,502</div>
+        <span class="product-badge">Overall Pick</span>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="lighting">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=philips-hue-smart-par38-2pack"
+            class="text-dark text-decoration-none">PHILIPS Hue Smart 100W PAR38 LED Bulb, 2 Pack, White & Color Ambiance
+            Color-Changing Light, 1300LM, E26, Outdoor Light Bulbs, Control with Hue App, Works with Alexa, Google
+            Assistant and Apple Homekit</a></h3>
+        <img src="/lighting/philips_1.jpg" alt="PHILIPS Hue Smart 100W PAR38 LED Bulb" class="product-img">
+        <div class="product-price">14,941</div>
+        <div class="product-original-price">23,710.54</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">2,056</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=kasa-smart-light-bulbs-kl125p4"
+            class="text-dark text-decoration-none">Kasa Smart Light Bulbs, Full Color Changing Dimmable Smart WiFi Bulbs
+            Compatible with Alexa and Google Home, A19, 9W 800 Lumens,2.4Ghz only, No Hub Required, 4 Count (Pack of 1),
+            Multicolor (KL125P4)</a></h3>
+        <img src="/lighting/kasa_1.jpg" alt="Kasa Smart Light Bulbs" class="product-img">
+        <div class="product-price">2,108.17</div>
+        <div class="product-original-price">3,999.00</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">21,913</div>
+        <span class="product-badge">Overall Pick</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=echosari-fairy-lights-10ft"
+            class="text-dark text-decoration-none">echosari Fairy Lights Plug in, 10Ft 120 LED Cluster Lights with
+            Remote APP Control, Color Changing Firecracker String Lights with Timer Music & Mic Sync for Christmas
+            Holiday Party Decor</a></h3>
+        <img src="/lighting/echosari_1.jpg" alt="echosari Fairy Lights Plug in" class="product-img">
+        <div class="product-price">1,810.23</div>
+        <div class="product-original-price">2,500.00</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">380</div>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="medical">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=easy-at-home-blood-pressure-monitor"
+            class="text-dark text-decoration-none">Easy@Home Blood Pressure Monitor: Accurate Cuff Automatic Blood
+            Pressure Monitor with Free App MyHeartPal - 3 Color Backlit Display 8.7”-16.5” Large Cuff, Not Bluetooth
+            EBP-095 Black</a></h3>
+        <img src="/medical/bp_1.jpg" alt="Easy@Home Blood Pressure Monitor" class="product-img">
+        <div class="product-price">2,999</div>
+        <div class="product-original-price">4,500</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">130</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=large-size-cuff-compatible-omron"
+            class="text-dark text-decoration-none"></a>Large Size Cuff Compatible with Omron 9"-16.5" Inches (22-42CM) L
+          Blood Pressure Cuff Adult ARM BP Replacement Cuff for Big ARM (Large)</a></h3>
+        <img src="/medical/cuff_1.jpg" alt="Large Size Cuff Compatible with Omron" class="product-img">
+        <div class="product-price">1,266.89</div>
+        <div class="product-original-price">1,999.00</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">2,921</div>
+        <span class="product-badge">Overall Pick</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=accu-chek-active-strips-100"
+            class="text-dark text-decoration-none"></a>Accu-Chek Active Strips, 100 (50x2) (Multicolor)</a></h3>
+        <img src="/medical/accu_1.jpg" alt="Accu-Chek Active Strips" class="product-img">
+        <div class="product-price">2,259.24</div>
+        <div class="product-original-price">2,600.00</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">1,089</div>
+        <span class="product-sponsored">true</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=hansaplast-elastic-plasters-20-strips"
+            class="text-dark text-decoration-none"></a>Hansaplast Elastic Plasters (20 Strips), Wound Plasters for
+          Joints and Much Moving Body Areas, Flexible Bandage Material with Extra Strong Adhesive Strength</a></h3>
+        <img src="/medical/handplast1.jpg" alt="Hansaplast Elastic Plasters" class="product-img">
+        <div class="product-price">1,370.13</div>
+        <div class="product-original-price">1,500.00</div>
+        <div class="product-rating">4.4</div>
+        <div class="product-reviews">150</div>
+      </article>
+    </section>
+    <section class="category-data" data-category="measuring">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=food-scale-33lb"
+            class="text-dark text-decoration-none"></a>Food Scale -33lb Digital Kitchen Scale for Food Ounces Grams
+          Rechargeable 304 Stainless Steel,Batteries and Type-C Charging | Perfect for Meal Prep, Cooking, and Baking,
+          Black</a></h3>
+        <img src="/measuring/kitchen_1.jpg" alt="Food Scale" class="product-img">
+        <div class="product-price">1,628.21</div>
+        <div class="product-original-price">2,063.84</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">7,225</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=general-tools-mmd4e-digital-moisture-meter"
+            class="text-dark text-decoration-none">General Tools MMD4E Digital Moisture Meter, Water Leak Detector,
+            Moisture Tester, Pin Type, Backlit LCD Display With Audible and Visual High-Medium-Low Moisture Content
+            Alerts, Grays</a></h3>
+        <img src="/measuring/mmd4e_1.jpg" alt="General Tools Moisture Meter" class="product-img">
+        <div class="product-price">3,511.80</div>
+        <div class="product-original-price">4,523.32</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">14,886</div>
+        <span class="product-badge">#1 Best Seller</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=cigman-laser-level-self-leveling-3x360"
+            class="text-dark text-decoration-none">CIGMAN Laser Level Self Leveling 3x360° 3D Green Cross Line for
+            Construction and Picture Hanging, Rechargeable battery, Remote Controller, Magnetic Rotating Stand
+            Included</a></h3>
+        <img src="/measuring/cigman1.jpg" alt="CIGMAN Laser Level" class="product-img">
+        <div class="product-price">12,676.17</div>
+        <div class="product-original-price">16,000.00</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">5,395</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+    </section>
+    <section class="category-data" data-category="air_conditioners">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lg-10000-btu-air-conditioner"
+            class="text-dark text-decoration-none">LG 10,000 BTU Through the Wall Air Conditioner, 115V, Cools up to
+            440 Sq. Ft. for Bedroom, Living Room, Apartment, with Remote, 3 Cool & Fan Speeds, Wall AC Unit, White</a>
+        </h3>
+        <img src="/ac/ac1.jpg" alt="LG 10,000 BTU Air Conditioner" class="product-img">
+        <div class="product-price">54,329.67</div>
+        <div class="product-original-price">65,000.00</div>
+        <div class="product-rating">3.9</div>
+        <div class="product-reviews">1,959</div>
+        <span class="product-badge">#1 Best Seller</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=whirlpool-1.5-ton-5-star-split-ac"
+            class="text-dark text-decoration-none">Whirlpool 1.5 Ton 5 Star, Magicool Inverter Split AC (MAGICOOL
+            15T 5S INV CNV S5K2PP1, Copper, Convertible 4-in-1 Cooling Mode, HD Filter White)</a></h3>
+        <img src="/ac/whirlpool_1.jpg" alt="Whirlpool 1.5 Ton 5 Star Split AC" class="product-img">
+        <div class="product-price">34,540</div>
+        <div class="product-original-price">70,600</div>
+        <div class="product-rating">3.5</div>
+        <div class="product-reviews">3,552</div>
+      </article>
+    </section>
+    <section class="category-data" data-category="refrigerators">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=whirlpool-300-l-refrigerator"
+            class="text-dark text-decoration-none">Whirlpool 300 L Frost Free Triple-Door Refrigerator | Zeolite
+            Technology | Microblock Technology [FP 353D PROTTON ROY ALPHA STEEL (N), Up to 44% Reduction in Cold Air
+            Loss*]</a></h3>
+        <img src="/refrigerator/whirlpool1.jpg" alt="Whirlpool 300 L Refrigerator" class="product-img">
+        <div class="product-price">32,990</div>
+        <div class="product-original-price">36,700</div>
+        <div class="product-rating">3.9</div>
+        <div class="product-reviews">5,205</div>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=samsung-183-l-refrigerator"
+            class="text-dark text-decoration-none">Samsung 183 L, 4 Star, Digital Inverter, Direct-Cool Single Door
+            Refrigerator (RR20C1824CR/HL, Red, Camellia Purple, Base Stand Drawer)</a></h3>
+        <img src="/refrigerator/samsung1.jpg" alt="Samsung 183 L Refrigerator" class="product-img">
+        <div class="product-price">15,990</div>
+        <div class="product-original-price">22,999</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">6,564</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=haier-190-l-refrigerator"
+            class="text-dark text-decoration-none">Haier 190L 4 Star Direct Cool Single Door Refrigerator | 3 Toughened
+            Glass Shelves | Fast Ice Making in Just 60 minutes | Large Veg Box| Easy Clean Back (HED-204DS-P, Dazzle
+            Steel)</a></h3>
+        <img src="/refrigerator/haier1.jpg" alt="Haier 190L Refrigerator" class="product-img">
+        <div class="product-price">14,490</div>
+        <div class="product-original-price">20,990</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">3,058</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="washing_machines">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lg-7-kg-washing-machine"
+            class="text-dark text-decoration-none">LG 7 Kg 5 Star Smart Inverter Technology Fully Automatic Top Load
+            Washing Machine (T70VBMB1Z, Auto Prewash, Turbodrum, Stainless Steel drum, LED Display, Smart Diagnosis
+            Middle
+            Black)</a></h3>
+        <img src="/washing/lg1.jpg" alt="LG 7 kg Top Load Washing Machine" class="product-img">
+        <div class="product-price">17,990</div>
+        <div class="product-original-price">27,490</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">12,788</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=voltas-beko-washing-machine"
+            class="text-dark text-decoration-none">Voltas Beko, A Tata Product 6.5 Kg 5 Star Semi-Automatic Top
+            Loading Washing Machine (WTT65UNX/OK3I0I0W01, Blue, Pulsator wash technology)</a></h3>
+        <img src="/washing/voltas1.jpg" alt="Voltas Beko 6.5 Kg Semi-Automatic Washing Machine"
+          class="product-img">
+        <div class="product-price">8,890</div>
+        <div class="product-original-price">14,500</div>
+        <div class="product-rating">3.9</div>
+        <div class="product-reviews">605</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=samsung-7-kg-eco-bubble-washing-machine"
+            class="text-dark text-decoration-none">Samsung 7 kg, 5 Star, Eco Bubble Technology, Digital Inverter
+            Motor, Soft Closing Door, Fully-Automatic Top Load Washing Machine (WA70BG4441YYTL, Lavender Gray)</a></h3>
+        <img src="/washing/samsung1.jpg" alt="Samsung 7 kg Eco Bubble Washing Machine" class="product-img">
+        <div class="product-price">17,490</div>
+        <div class="product-original-price">22,500</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">8,537</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="microwaves">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=panasonic-20-l-solo-microwave"
+            class="text-dark text-decoration-none">Panasonic 20 L Solo Microwave Oven (NN-SM25JBFDG,Black)</a></h3>
+        <img src="/micro/panasonic1.jpg" alt="Panasonic 20 L Solo Microwave Oven" class="product-img">
+        <div class="product-price">5,790</div>
+        <div class="product-original-price">6,790</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">4,150</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=haier-19-l-solo-microwave"
+            class="text-dark text-decoration-none">Haier 19 L Inverter Technology, Light Weight, Defrost, 5 Power
+            Levels Solo Microwave Oven (HIL1901MBPB, Black)</a></h3>
+        <img src="/micro/Haier1.jpg" alt="Haier 19 L Solo Microwave Oven" class="product-img">
+        <div class="product-price">6,648</div>
+        <div class="product-original-price">14,900</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">828</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lg-20-l-solo-microwave"
+            class="text-dark text-decoration-none">LG 20 L Solo Microwave Oven (MS2043BP, Black, Health plus Menu,
+            I-Wave
+            Technology, Indian Cuisine, Even Reheat & Defrost, Auto Cook Menu, Anti-Bacterial Cavity & Steam
+            Clean)</a></h3>
+        <img src="/micro/lg1.jpg" alt="LG 20 L Solo Microwave Oven" class="product-img">
+        <div class="product-price">7,290</div>
+        <div class="product-original-price">8,199</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">3,418</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+
+    </section>
+    <section class="category-data" data-category="led_tvs">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=sony-bravia-2-ii-55-bundle"
+            class="text-dark text-decoration-none">Sony BRAVIA 2 II 55 Inch 4K Ultra HD LED Smart TV (K-55S20M2, 2025)
+            with HT-S400 2.1ch Soundbar and Wireless Subwoofer Bundle</a></h3>
+        <img src="/tv/sony_1.jpg" alt="Sony BRAVIA 2 II 55 Inch Bundle" class="product-img">
+        <div class="product-price">81,281.54</div>
+        <div class="product-original-price">99,900</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">370</div>
+        <span class="product-badge">Best Seller</span>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=samsung-43-crystal-bundle"
+            class="text-dark text-decoration-none">Samsung 43-Inch Class Crystal UHD U8000F 4K Smart TV (2025 Model)
+            Endless Free Content, Crystal Processor 4K B-Series Soundbar HW B400F 2.0 ch Soundbar with Built in
+            Subwoofer
+            (2025 Model)</a></h3>
+        <img src="/tv/samsung_1.jpg" alt="Samsung 43-Inch Crystal Bundle" class="product-img">
+        <div class="product-price">35,490</div>
+        <div class="product-original-price">49,900</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">2,533</div>
+        <span class="product-badge">Overall Pick</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lg-32-ultrafine-monitor"
+            class="text-dark text-decoration-none">LG 32UR500K-B Ultrafine 32-inch 4K UHD (3840x2160) Computer Monitor
+            HDR10 Built-in Speaker x2 OnScreen Control Reader Mode Flicker Safe Borderless Design HDMIx2 DisplayPort
+            Black</a></h3>
+        <img src="/tv/lg_1.jpg" alt="LG Monitor" class="product-img">
+        <div class="product-price">18,290</div>
+        <div class="product-original-price">24,990</div>
+        <div class="product-rating">4.4</div>
+        <div class="product-reviews">290</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+    </section>
+    <section class="category-data" data-category="appliances">
+
+      <!-- Microwaves in Appliances -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=panasonic-20-l-solo-microwave"
+            class="text-dark text-decoration-none">Panasonic 20 L Solo Microwave Oven (NN-SM25JBFDG,Black)</a></h3>
+        <img src="/micro/panasonic1.jpg" alt="Panasonic 20 L Solo Microwave Oven" class="product-img">
+        <div class="product-price">5,790</div>
+        <div class="product-original-price">6,790</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">4,150</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=haier-19-l-solo-microwave"
+            class="text-dark text-decoration-none">Haier 19 L Inverter Technology, Light Weight, Defrost, 5 Power
+            Levels Solo Microwave Oven (HIL1901MBPB, Black)</a></h3>
+        <img src="/micro/Haier1.jpg" alt="Haier 19 L Solo Microwave Oven" class="product-img">
+        <div class="product-price">6,648</div>
+        <div class="product-original-price">14,900</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">828</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+
+      <!-- Refrigerators in Appliances -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=whirlpool-300-l-refrigerator"
+            class="text-dark text-decoration-none">Whirlpool 300 L Frost Free Triple-Door Refrigerator | Zeolite
+            Technology | Microblock Technology [FP 353D PROTTON ROY ALPHA STEEL (N)]</a></h3>
+        <img src="/refrigerator/whirlpool1.jpg" alt="Whirlpool 300 L Refrigerator" class="product-img">
+        <div class="product-price">32,990</div>
+        <div class="product-original-price">36,700</div>
+        <div class="product-rating">3.9</div>
+        <div class="product-reviews">5,205</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=samsung-183-l-refrigerator"
+            class="text-dark text-decoration-none">Samsung 183 L, 4 Star, Digital Inverter, Direct-Cool Single Door
+            Refrigerator (RR20C1824CR/HL, Red)</a></h3>
+        <img src="/refrigerator/samsung1.jpg" alt="Samsung 183 L Refrigerator" class="product-img">
+        <div class="product-price">15,990</div>
+        <div class="product-original-price">22,999</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">6,564</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+
+      <!-- Washing Machines in Appliances -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lg-7-kg-washing-machine"
+            class="text-dark text-decoration-none">LG 7 Kg 5 Star Smart Inverter Technology Fully Automatic Top Load
+            Washing Machine (T70VBMB1Z)</a></h3>
+        <img src="/washing/lg1.jpg" alt="LG 7 kg Top Load Washing Machine" class="product-img">
+        <div class="product-price">17,990</div>
+        <div class="product-original-price">27,490</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">12,788</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=voltas-beko-washing-machine"
+            class="text-dark text-decoration-none">Voltas Beko, A Tata Product 6.5 Kg 5 Star Semi-Automatic Top
+            Loading Washing Machine</a></h3>
+        <img src="/washing/voltas1.jpg" alt="Voltas Beko 6.5 Kg Semi-Automatic Washing Machine"
+          class="product-img">
+        <div class="product-price">8,890</div>
+        <div class="product-original-price">14,500</div>
+        <div class="product-rating">3.9</div>
+        <div class="product-reviews">605</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+    </section>
+    <section class="category-data" data-category="kitchen">
+
+      <!-- Microwaves in Kitchen -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=panasonic-20-l-solo-microwave"
+            class="text-dark text-decoration-none">Panasonic 20 L Solo Microwave Oven (NN-SM25JBFDG,Black)</a></h3>
+        <img src="/micro/panasonic1.jpg" alt="Panasonic 20 L Solo Microwave Oven" class="product-img">
+        <div class="product-price">5,790</div>
+        <div class="product-original-price">6,790</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">4,150</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=haier-19-l-solo-microwave"
+            class="text-dark text-decoration-none">Haier 19 L Inverter Technology, Light Weight, Defrost, 5 Power
+            Levels Solo Microwave Oven (HIL1901MBPB, Black)</a></h3>
+        <img src="/micro/Haier1.jpg" alt="Haier 19 L Solo Microwave Oven" class="product-img">
+        <div class="product-price">6,648</div>
+        <div class="product-original-price">14,900</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">828</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lg-20-l-solo-microwave"
+            class="text-dark text-decoration-none">LG 20 L Solo Microwave Oven (MS2043BP, Black, Health plus Menu,
+            I-Wave Technology, Indian Cuisine, Even Reheat & Defrost, Auto Cook Menu, Anti-Bacterial Cavity & Steam
+            Clean)</a></h3>
+        <img src="/micro/lg1.jpg" alt="LG 20 L Solo Microwave Oven" class="product-img">
+        <div class="product-price">7,290</div>
+        <div class="product-original-price">8,199</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">3,418</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+
+      <!-- Refrigerators in Kitchen -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=whirlpool-300-l-refrigerator"
+            class="text-dark text-decoration-none">Whirlpool 300 L Frost Free Triple-Door Refrigerator | Zeolite
+            Technology | Microblock Technology [FP 353D PROTTON ROY ALPHA STEEL (N)]</a></h3>
+        <img src="/refrigerator/whirlpool1.jpg" alt="Whirlpool 300 L Refrigerator" class="product-img">
+        <div class="product-price">32,990</div>
+        <div class="product-original-price">36,700</div>
+        <div class="product-rating">3.9</div>
+        <div class="product-reviews">5,205</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=samsung-183-l-refrigerator"
+            class="text-dark text-decoration-none">Samsung 183 L, 4 Star, Digital Inverter, Direct-Cool Single Door
+            Refrigerator (RR20C1824CR/HL, Red)</a></h3>
+        <img src="/refrigerator/samsung1.jpg" alt="Samsung 183 L Refrigerator" class="product-img">
+        <div class="product-price">15,990</div>
+        <div class="product-original-price">22,999</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">6,564</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=haier-190-l-refrigerator"
+            class="text-dark text-decoration-none">Haier 190L 4 Star Direct Cool Single Door Refrigerator (HED-204DS-P,
+            Dazzle Steel)</a></h3>
+        <img src="/refrigerator/haier1.jpg" alt="Haier 190L Refrigerator" class="product-img">
+        <div class="product-price">14,490</div>
+        <div class="product-original-price">20,990</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">3,058</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+      <!-- Washing Machines in Kitchen -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lg-7-kg-washing-machine"
+            class="text-dark text-decoration-none">LG 7 Kg 5 Star Smart Inverter Technology Fully Automatic Top Load
+            Washing Machine (T70VBMB1Z)</a></h3>
+        <img src="/washing/lg1.jpg" alt="LG 7 kg Top Load Washing Machine" class="product-img">
+        <div class="product-price">17,990</div>
+        <div class="product-original-price">27,490</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">12,788</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=voltas-beko-washing-machine"
+            class="text-dark text-decoration-none">Voltas Beko, A Tata Product 6.5 Kg 5 Star Semi-Automatic Top
+            Loading Washing Machine</a></h3>
+        <img src="/washing/voltas1.jpg" alt="Voltas Beko 6.5 Kg Semi-Automatic Washing Machine"
+          class="product-img">
+        <div class="product-price">8,890</div>
+        <div class="product-original-price">14,500</div>
+        <div class="product-rating">3.9</div>
+        <div class="product-reviews">605</div>
+        <span class="product-badge">Limited time deal</span>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="home">
+      <!-- 1 Microwave -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=panasonic-20-l-solo-microwave"
+            class="text-dark text-decoration-none">Panasonic 20 L Solo Microwave Oven (NN-SM25JBFDG,Black)</a></h3>
+        <img src="/micro/panasonic1.jpg" alt="Panasonic 20 L Solo Microwave Oven" class="product-img">
+        <div class="product-price">5,790</div>
+        <div class="product-original-price">6,790</div>
+        <div class="product-rating">4.3</div>
+        <div class="product-reviews">4,150</div>
+        <span class="product-badge">Limited time deal</span>
+        <span class="product-prime">true</span>
+      </article>
+
+      <!-- 1 Refrigerator -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=whirlpool-300-l-refrigerator"
+            class="text-dark text-decoration-none">Whirlpool 300 L Frost Free Triple-Door Refrigerator | Zeolite
+            Technology [FP 353D PROTTON ROY ALPHA STEEL (N)]</a></h3>
+        <img src="/refrigerator/whirlpool1.jpg" alt="Whirlpool 300 L Refrigerator" class="product-img">
+        <div class="product-price">32,990</div>
+        <div class="product-original-price">36,700</div>
+        <div class="product-rating">3.9</div>
+        <div class="product-reviews">5,205</div>
+        <span class="product-prime">true</span>
+      </article>
+
+      <!-- 1 Washing Machine -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lg-7-kg-washing-machine"
+            class="text-dark text-decoration-none">LG 7 Kg 5 Star Smart Inverter Technology Fully Automatic Top Load
+            Washing Machine (T70VBMB1Z)</a></h3>
+        <img src="/washing/lg1.jpg" alt="LG 7 kg Top Load Washing Machine" class="product-img">
+        <div class="product-price">17,990</div>
+        <div class="product-original-price">27,490</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">12,788</div>
+        <span class="product-badge">Limited time deal</span>
+        <span class="product-prime">true</span>
+      </article>
+
+      <!-- 1 Decoration -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=ganesha-wall-art"
+            class="text-dark text-decoration-none">Slickss Gold Ganesha Wall Decor, Hindu Lord Ganapati Metal Wall Art -
+            Home Decoration</a></h3>
+        <img src="/decoration/ganesha_1.jpg" alt="Slickss Gold Ganesha Wall Decor" class="product-img">
+        <div class="product-price">899</div>
+        <div class="product-original-price">1,500</div>
+        <div class="product-rating">4.4</div>
+        <div class="product-reviews">2,000</div>
+        <span class="product-badge">Best Seller</span>
+        <span class="product-prime">true</span>
+      </article>
+
+      <!-- 1 Furniture -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=folding-desk"
+            class="text-dark text-decoration-none">Folding Desk - 31.5" Wood Top Foldable Desk for Small Spaces | No
+            Assembly Required</a></h3>
+        <img src="/decoration/desk_1.jpg" alt="Folding Desk - 31.5 Wood Top" class="product-img">
+        <div class="product-price">5,961</div>
+        <div class="product-original-price">8,338</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">823</div>
+        <span class="product-badge">Amazon's Choice</span>
+        <span class="product-prime">true</span>
+      </article>
+
+      <!-- 1 Mobile -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=iphone-15-pro-renewed"
+            class="text-dark text-decoration-none">Apple iPhone 15 Pro, 128GB, Black Titanium - Verizon (Renewed)</a>
+        </h3>
+        <img src="/mobiles/iphone_1.jpg" alt="iPhone 15 Pro" class="product-img">
+        <div class="product-rating">2.3</div>
+        <div class="product-reviews">1,250</div>
+        <span class="product-prime">true</span>
+      </article>
+
+      <!-- 1 Laptop -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=samsung-galaxy-book3-pro"
+            class="text-dark text-decoration-none">SAMSUNG 14” Galaxy Book3 Pro Laptop | 13th Gen Intel Core i7 | 16GB |
+            512GB</a></h3>
+        <img src="/laptop/samsung_1.jpg" alt="SAMSUNG 14” Galaxy Book3 Pro" class="product-img">
+        <div class="product-price">1,28,076</div>
+        <div class="product-original-price">1,50,000</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">353</div>
+        <span class="product-prime">true</span>
+      </article>
+
+      <!-- 1 Air Conditioner -->
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lg-10000-btu-air-conditioner"
+            class="text-dark text-decoration-none">LG 10,000 BTU Through the Wall Air Conditioner | 115V | Cools up to
+            440 Sq. Ft.</a></h3>
+        <img src="/ac/ac1.jpg" alt="LG 10,000 BTU Air Conditioner" class="product-img">
+        <div class="product-price">54,329.67</div>
+        <div class="product-original-price">65,000.00</div>
+        <div class="product-rating">3.9</div>
+        <div class="product-reviews">1,959</div>
+        <span class="product-badge">#1 Best Seller</span>
+        <span class="product-prime">true</span>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="essentials">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lysol-multi-surface-cleaner"
+            class="text-dark text-decoration-none">Lysol Multi-Surface Cleaner, Sanitizing and Disinfecting Pour, to
+            Clean and Deodorize, Sparkling Lemon and Sunflower Essence, 40 Fl Oz</a></h3>
+        <img src="/cleaning/lyzol_1.jpg" alt="Lysol Multi-Surface Cleaner" class="product-img">
+        <div class="product-price">345</div>
+        <div class="product-original-price">385</div>
+        <div class="product-rating">4.8</div>
+        <div class="product-reviews">25,241</div>
+        <span class="product-badge">Best Seller</span>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=ariel-laundry-powder"
+            class="text-dark text-decoration-none">ARIEL Laundry Powder Detergent 500G Aroma Original 3-Pack</a></h3>
+        <img src="/cleaning/ariel.jpg" alt="ARIEL Laundry Powder Detergent 500G Aroma Original 3-Pack"
+          class="product-img">
+        <div class="product-price">450</div>
+        <div class="product-original-price">550</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">20,000</div>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=dettol-handwash"
+            class="text-dark text-decoration-none">Dettol Original everyday Protection Liquid Handwash - 200ml</a></h3>
+        <img src="/cleaning/dettol_1.jpg" alt="Dettol Original everyday Protection Liquid Handwash - 200ml"
+          class="product-img">
+        <div class="product-price">159</div>
+        <div class="product-original-price">199</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">18,000</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=gala-no-dust-broom"
+            class="text-dark text-decoration-none">Gala No Dust Floor Broom (Freedom from New Broom Dust- Busan), 2
+            Count</a></h3>
+        <img src="/cleaning/gala_1.jpg"
+          alt="Gala No Dust Floor Broom (Freedom from New Broom Dust- Busan), 2 Count" class="product-img">
+        <div class="product-price">180</div>
+        <div class="product-original-price">210</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">55,000</div>
+      </article>
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=sprayway-glass-cleaner"
+            class="text-dark text-decoration-none">Sprayway Ammonia-Free Glass Cleaner, Foaming Action - Streakless
+            Shine, 15 Ounce (Pack of 1)</a></h3>
+        <img src="/cleaning/sprayway_1.jpg"
+          alt="Sprayway Ammonia-Free Glass Cleaner, Foaming Action - Streakless Shine, 15 Ounce (Pack of 1) "
+          class="product-img">
+        <div class="product-price">95</div>
+        <div class="product-original-price">110</div>
+        <div class="product-rating">4.4</div>
+        <div class="product-reviews">12,000</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=zep-acidic-toilet-bowl-cleaner"
+            class="text-dark text-decoration-none">Zep Acidic Toilet Bowl Cleaner - 32 oz (Case of 4)</a></h3>
+        <img src="/cleaning/zep_1.jpg" alt="Zep Acidic Toilet Bowl Cleaner" class="product-img">
+        <div class="product-price">1,499</div>
+        <div class="product-original-price">1,899</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">1,954</div>
+        <span class="product-badge">Top Choice</span>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="tools">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=crimper"
+            class="text-dark text-decoration-none">Electric Hydraulic Cable Lug Crimper - 18V Rechargeable Pliers with
+            LED Display, Heavy-Duty Electric Cable Cutter for...</a></h3>
+        <img src="/tools/cable_plug_1.jpg" alt="Crimper" class="product-img">
+        <div class="product-price">3,48,653.95</div>
+        <div class="product-original-price">3,73,500.00</div>
+        <div class="product-rating">4.8</div>
+        <div class="product-reviews">156</div>
+        <span class="product-badge">Amazon's Choice</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=crane"
+            class="text-dark text-decoration-none">Professional 2T Hydraulic Crane - Portable Engine Hanger for
+            Automotive & Industrial
+            Use, 53kg Fixed Capacity, Heavy-Duty Liftin...</a></h3>
+        <img src="/tools/crane_1.jpg" alt="Crane" class="product-img">
+        <div class="product-price">3,16,761.20</div>
+        <div class="product-original-price">3,48,600.00</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">89</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=welder"
+            class="text-dark text-decoration-none">High-Power 2100W HDPE Hot Wedge Welder - Professional Geomembrane
+            Welding Machine for
+            PVC, EVA, PE, PP Sealing &...</a></h3>
+        <img src="/tools/hdpe1.jpg" alt="Welder" class="product-img">
+        <div class="product-price">3,09,255.51</div>
+        <div class="product-original-price">3,32,000.00</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">45</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=reflow"
+            class="text-dark text-decoration-none">2300W/3300W Desktop Reflow Oven, Professional Infrared PCB Soldering
+            Station, High-Efficiency Welding Machine, T937-220V Soldering Rework Tool for Electronics Repair</a></h3>
+        <img src="/tools/oven_1.jpg" alt="Reflow Oven" class="product-img">
+        <div class="product-price">2,83,810.20</div>
+        <div class="product-original-price">3,15,400.00</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">231</div>
+        <span class="product-badge">Top Rated</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=pipecutter"
+            class="text-dark text-decoration-none">Portable Electric Pipe Cutting Machine - ZD400, Fully Automatic Steel
+            Pipe Cutter, Burr-Free, Multifunctional, Ideal for DIY & Professional Use, High Precision, Efficient Cutting
+            Tool</a></h3>
+        <img src="/tools/pipe_1.jpg" alt="Pipe Cutter" class="product-img">
+        <div class="product-price">2,65,496.25</div>
+        <div class="product-original-price">2,90,500.00</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">112</div>
+        <span class="product-badge">10% OFF</span>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="fresh">
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=lime"
+            class="text-dark text-decoration-none">Lime</a></h3>
+        <img src="/fresh/lime.jpg" alt="Lime" class="product-img">
+        <div class="product-price">30</div>
+        <div class="product-original-price">45</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">40,832</div>
+        <div class="product-bought">100K+ bought in past month</div>
+        <span class="product-options">true</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=banana"
+            class="text-dark text-decoration-none">Banana Bunch (4-5 Count)</a></h3>
+        <img src="/fresh/banana.jpg" alt="Banana" class="product-img">
+        <div class="product-price">120</div>
+        <div class="product-original-price">150</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">71,421</div>
+        <div class="product-bought">100K+ bought in past month</div>
+        <span class="product-badge">Best Seller</span>
+        <span class="product-options">true</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=blueberries"
+            class="text-dark text-decoration-none">Organic Blueberries Pint</a></h3>
+        <img src="/fresh/blueberries_1.jpg" alt="Blueberries" class="product-img">
+        <div class="product-price">450</div>
+        <div class="product-original-price">500</div>
+        <div class="product-rating">4.7</div>
+        <div class="product-reviews">25,241</div>
+        <div class="product-bought">100K+ bought in past month</div>
+        <span class="product-options">true</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=apple"
+            class="text-dark text-decoration-none">Honeycrisp Apple (Pack of 1)</a></h3>
+        <img src="/fresh/apple_1.jpg" alt="Apple" class="product-img">
+        <div class="product-price">100</div>
+        <div class="product-original-price">120</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">24,432</div>
+        <div class="product-bought">100K+ bought in past month</div>
+        <span class="product-options">true</span>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="/product_details.html?id=strawberries"
+            class="text-dark text-decoration-none">Strawberries, 2 Lb</a></h3>
+        <img src="/fresh/strawberries_1.jpg" alt="Strawberries" class="product-img">
+        <div class="product-price">550</div>
+        <div class="product-original-price">600</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">7,532</div>
+        <div class="product-bought">20K+ bought in past month</div>
+        <span class="product-options">true</span>
+      </article>
+    </section>
+
+    <section class="category-data" data-category="sarees">
+
+      <article class="product-item">
+        <h3 class="product-title"><a href="product_details.html?id=saree-35"
+            class="text-dark text-decoration-none">SGF11 Women's Kanjivaram Soft Silk Saree With Blouse Piece</a></h3>
+        <img src="/sarees/sgf_1.jpg" alt="SGF11 Saree" class="product-img">
+        <div class="product-price">5,499</div>
+        <div class="product-original-price">5,850</div>
+        <div class="product-rating">3.9</div>
+        <div class="product-reviews">598</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="product_details.html?id=saree-36"
+            class="text-dark text-decoration-none">Ladies Pure Cotton Soft Silk Kanjivaram Saree with Wedding Blouse
+            (Fatima)</a></h3>
+        <img src="/sarees/fatima_1.jpg" alt="Fatima Saree" class="product-img">
+        <div class="product-price">1,799</div>
+        <div class="product-original-price">2,450</div>
+        <div class="product-rating">3.7</div>
+        <div class="product-reviews">507</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="product_details.html?id=saree-37"
+            class="text-dark text-decoration-none">SHOPAZ Ready to Wear Rose Gold Satin Silk 1 Minute Pre Pleated
+            Saree</a></h3>
+        <img src="/sarees/shopaz_1.jpg" alt="SHOPAZ Saree" class="product-img">
+        <div class="product-price">4,650</div>
+        <div class="product-original-price">4,980</div>
+        <div class="product-rating">4.0</div>
+        <div class="product-reviews">144</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="product_details.html?id=saree-38"
+            class="text-dark text-decoration-none">Modern Chiffon Saree for Evening Wear</a></h3>
+        <img src="/image 38.png" alt="Saree" class="product-img">
+        <div class="product-price">999</div>
+        <div class="product-original-price">1,999</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">432</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="product_details.html?id=saree-39"
+            class="text-dark text-decoration-none">Elegant Net Saree with Embroidery</a></h3>
+        <img src="/image 39.png" alt="Saree" class="product-img">
+        <div class="product-price">2,199</div>
+        <div class="product-original-price">3,999</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">678</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="product_details.html?id=saree-40"
+            class="text-dark text-decoration-none">Classic Handloom Cotton Saree</a></h3>
+        <img src="/image 40.png" alt="Saree" class="product-img">
+        <div class="product-price">1,599</div>
+        <div class="product-original-price">2,499</div>
+        <div class="product-rating">4.6</div>
+        <div class="product-reviews">890</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="product_details.html?id=saree-41"
+            class="text-dark text-decoration-none">Stylish Party Wear Saree with Blouse piece</a></h3>
+        <img src="/image 41.png" alt="Saree" class="product-img">
+        <div class="product-price">2,799</div>
+        <div class="product-original-price">4,599</div>
+        <div class="product-rating">4.4</div>
+        <div class="product-reviews">1,432</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="product_details.html?id=blue-saree"
+            class="text-dark text-decoration-none">REVENANT Banarasi silk Saree for Women with Unstitched Blouse
+            Piece</a></h3>
+        <img src="/sarees/revenant_1.jpg" alt="Saree" class="product-img">
+        <div class="product-price">3,319</div>
+        <div class="product-original-price">4,999</div>
+        <div class="product-rating">4.1</div>
+        <div class="product-reviews">112</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="product_details.html?id=green-saree"
+            class="text-dark text-decoration-none">Indian Women's Soft Kanjivaram Silk Saree Banarasi Design Style</a>
+        </h3>
+        <img src="/sarees/kanjivaram_1.jpg" alt="Saree" class="product-img">
+        <div class="product-price">41,500</div>
+        <div class="product-original-price">60,000</div>
+        <div class="product-rating">4.5</div>
+        <div class="product-reviews">23</div>
+      </article>
+      <article class="product-item">
+        <h3 class="product-title"><a href="product_details.html?id=saree-44"
+            class="text-dark text-decoration-none">Women's Poly Silk Jacquard Saree with Unstitched Blouse Piece</a>
+        </h3>
+        <img src="/sarees/jacquard_1.jpg" alt="Saree" class="product-img">
+        <div class="product-price">3,235</div>
+        <div class="product-original-price">4,500</div>
+        <div class="product-rating">4.2</div>
+        <div class="product-reviews">45</div>
+      </article>
+    </section>
+  </section>
+
+
+  <script type="module" src="/src/js/products.js"></script>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>
