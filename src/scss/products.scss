@@ -226,7 +226,9 @@
         }
 
         .prime-icon {
-            height: 14px;
+            height: 16px;
+            width: auto;
+            object-fit: contain;
             margin-bottom: 4px;
         }
 
